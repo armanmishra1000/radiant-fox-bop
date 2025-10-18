@@ -210,6 +210,30 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <section className="bg-accent">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 text-center">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold uppercase text-black">
+            Ready for Your Next Adventure?
+          </h2>
+          <p className="mt-4 max-w-2xl mx-auto text-black/80">
+            Contact us today to get a quote, book a test ride, or find the perfect bike for your needs.
+          </p>
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" variant="secondary">
+              <Link href="/contact">
+                Contact Us
+              </Link>
+            </Button>
+            <Button asChild size="lg" className="bg-black text-white hover:bg-black/80">
+              <Link href="/collections">
+                Browse All Bikes
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
