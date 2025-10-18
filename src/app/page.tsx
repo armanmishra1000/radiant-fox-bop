@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ShieldCheck, Wrench, Award } from "lucide-react";
+import { ArrowRight, Frame, GitCommit, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Carousel,
@@ -38,19 +38,19 @@ const collections = [
 
 const highlights = [
     {
-        icon: ShieldCheck,
-        title: "Race-Proven Durability",
-        description: "Built with high-strength materials to withstand the toughest conditions."
+        icon: Frame,
+        title: "Tri-Bar Chassis",
+        description: "Our race-proven Tri-Bar frame provides superior rigidity and handling."
     },
     {
-        icon: Award,
-        title: "Performance Tuned",
-        description: "Engines and suspension tuned for maximum performance and rider feedback."
+        icon: GitCommit,
+        title: "Linkage Suspension",
+        description: "Advanced linkage rear suspension for a smoother ride and better traction."
     },
     {
-        icon: Wrench,
-        title: "Easy Maintenance",
-        description: "Designed for simple access to key components, making upkeep a breeze."
+        icon: Lightbulb,
+        title: "Enduro Spec Lighting",
+        description: "Bright, reliable lighting on select models for extending your rides beyond sunset."
     }
 ]
 
