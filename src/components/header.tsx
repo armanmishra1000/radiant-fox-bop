@@ -11,6 +11,7 @@ const navLinks = [
   { href: "/pit-bike", label: "Pit Bikes" },
   { href: "/atv", label: "ATVs" },
   { href: "/parts", label: "Parts" },
+  { href: "/workshop", label: "Workshop" },
   { href: "/database", label: "Database" },
   { href: "/gallery", label: "Gallery" },
 ];
