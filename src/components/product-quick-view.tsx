@@ -58,13 +58,13 @@ export function ProductQuickView({ product, open, onOpenChange }: ProductQuickVi
                 <ul className="mt-4 space-y-2 text-muted-foreground">
                   {product.highlights.slice(0, 3).map((highlight) => (
                     <li key={highlight} className="flex items-center gap-2">
-                      <CheckCircle className="h-5 w-5 text-accent" />
+                      <CheckCircle className="h-5 w-5 text-primary" />
                       <span>{highlight}</span>
                     </li>
                   ))}
                 </ul>
               )}
-              <Button asChild size="lg" className="mt-6 w-full bg-accent text-black hover:bg-accent-600">
+              <Button asChild size="lg" className="mt-6 w-full bg-primary text-primary-foreground">
                 <Link href={`/products/${product.handle}`}>
                   View Full Details <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>

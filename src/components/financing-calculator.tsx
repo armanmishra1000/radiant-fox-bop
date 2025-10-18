@@ -171,7 +171,7 @@ export function FinancingCalculator() {
                   </FormItem>
                 )}
               />
-              <Button type="submit" className="w-full bg-accent text-black hover:bg-accent-600">
+              <Button type="submit" className="w-full bg-primary text-primary-foreground">
                 Calculate
               </Button>
             </form>
@@ -184,7 +184,7 @@ export function FinancingCalculator() {
             <CardTitle>Estimated Monthly Payment</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-4xl font-bold text-accent">
+            <p className="text-4xl font-bold text-primary">
               {result ? formatCurrency(result.monthlyPayment) : "$0.00"}
             </p>
           </CardContent>

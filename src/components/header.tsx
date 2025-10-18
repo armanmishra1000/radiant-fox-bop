@@ -30,15 +30,15 @@ export function Header() {
       <div className="bg-bg-dark text-white">
         <div className="container mx-auto flex h-10 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 text-sm">
           <div className="flex items-center gap-4">
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-accent">
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary">
               <WhatsAppIcon className="h-4 w-4" />
               <span className="hidden sm:inline">Chat on WhatsApp</span>
             </a>
-            <a href="tel:1-800-555-1234" className="flex items-center gap-2 hover:text-accent">
+            <a href="tel:1-800-555-1234" className="flex items-center gap-2 hover:text-primary">
               <Phone size={16} />
               <span className="hidden sm:inline">1-800-555-1234</span>
             </a>
-            <a href="mailto:sales@thumpstardemo.com" className="flex items-center gap-2 hover:text-accent">
+            <a href="mailto:sales@thumpstardemo.com" className="flex items-center gap-2 hover:text-primary">
               <Mail size={16} />
               <span className="hidden sm:inline">sales@thumpstardemo.com</span>
             </a>

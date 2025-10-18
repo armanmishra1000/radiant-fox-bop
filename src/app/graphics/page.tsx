@@ -61,7 +61,7 @@ export default function GraphicsPage() {
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div 
-                    className="text-center text-black -translate-y-4 transform -skew-y-6"
+                    className="text-center text-primary -translate-y-4 transform -skew-y-6"
                   >
                     <p
                       className="font-heading font-bold text-5xl md:text-8xl"
@@ -123,7 +123,7 @@ export default function GraphicsPage() {
                         htmlFor={kit.id}
                         className={cn(
                             "block rounded-lg border-2 p-1 cursor-pointer",
-                            selectedKitId === kit.id ? "border-accent ring-2 ring-accent" : "border-muted"
+                            selectedKitId === kit.id ? "border-primary ring-2 ring-primary" : "border-muted"
                         )}
                       >
                         <Image 
@@ -147,7 +147,7 @@ export default function GraphicsPage() {
               <WhatsappButton
                 size="lg"
                 message={whatsappMessage}
-                className="w-full bg-accent text-black hover:bg-accent-600"
+                className="w-full bg-primary text-primary-foreground"
               >
                 Inquire to Order
               </WhatsappButton>

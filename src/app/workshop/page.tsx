@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 };
 
 const iconMap = {
-  guide: <Wrench className="h-6 w-6 text-accent" />,
-  video: <Video className="h-6 w-6 text-accent" />,
-  pdf: <FileText className="h-6 w-6 text-accent" />,
+  guide: <Wrench className="h-6 w-6 text-primary" />,
+  video: <Video className="h-6 w-6 text-primary" />,
+  pdf: <FileText className="h-6 w-6 text-primary" />,
 };
 
 export default function WorkshopPage() {

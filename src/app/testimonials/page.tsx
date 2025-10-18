@@ -37,7 +37,7 @@ export default function TestimonialsPage() {
       <div className="mt-16 text-center">
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
-            <Button size="lg" className="bg-accent text-black hover:bg-accent-600">
+            <Button size="lg" className="bg-primary text-primary-foreground">
               Submit Your Testimonial
             </Button>
           </DialogTrigger>

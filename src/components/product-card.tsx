@@ -79,7 +79,7 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
               ) : (
               <span className="text-lg font-medium text-foreground">Request Quote</span>
               )}
-              <Link href={`/products/${product.handle}`} className="inline-flex items-center rounded-full bg-accent px-4 py-1.5 text-sm font-bold text-black">
+              <Link href={`/products/${product.handle}`} className="inline-flex items-center rounded-full bg-primary px-4 py-1.5 text-sm font-bold text-primary-foreground">
                 View <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
           </div>

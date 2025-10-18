@@ -51,7 +51,7 @@ export function CompareTray() {
           </div>
           <div className="flex items-center gap-2">
             <Button variant="ghost" size="sm" onClick={clearCompare}>Clear</Button>
-            <Button asChild className="bg-accent text-black hover:bg-accent-600">
+            <Button asChild className="bg-primary text-primary-foreground">
               <Link href="/compare">Compare Now</Link>
             </Button>
           </div>

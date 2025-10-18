@@ -131,7 +131,7 @@ export function TestimonialForm({ setOpen }: { setOpen: (open: boolean) => void 
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full bg-accent text-black hover:bg-accent-600">Submit Testimonial</Button>
+        <Button type="submit" className="w-full bg-primary text-primary-foreground">Submit Testimonial</Button>
       </form>
     </Form>
   );

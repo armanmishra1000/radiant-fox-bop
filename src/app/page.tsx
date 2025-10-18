@@ -99,7 +99,7 @@ export default function Home() {
             Discover our range of high-performance dirt bikes, pit bikes, and ATVs built to conquer any terrain.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-400">
-            <Button asChild size="lg" className="bg-accent text-black hover:bg-accent-600 animate-pulse-bright">
+            <Button asChild size="lg" className="bg-primary text-primary-foreground animate-pulse-bright">
               <Link href="/collections">
                 Explore Bikes <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
@@ -108,7 +108,7 @@ export default function Home() {
               size="lg"
               variant="outline"
               message="Hello, I'm interested in learning more about your bikes."
-              className="border-accent text-accent hover:bg-accent hover:text-black"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
             >
               Inquire on WhatsApp
             </WhatsappButton>
@@ -123,8 +123,8 @@ export default function Home() {
                 {highlights.map((highlight, index) => (
                     <AnimateOnScroll key={highlight.title} delay={index * 150}>
                         <div className="group rounded-2xl p-6 transition-all duration-300 hover:bg-card hover:shadow-card hover:-translate-y-1">
-                            <div className="flex items-center justify-center h-16 w-16 rounded-full bg-accent/20 mx-auto transition-all duration-300 group-hover:scale-110 group-hover:bg-accent group-hover:rotate-6">
-                                <highlight.icon className="h-8 w-8 text-accent transition-colors duration-300 group-hover:text-black" />
+                            <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/20 mx-auto transition-all duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:rotate-6">
+                                <highlight.icon className="h-8 w-8 text-primary transition-colors duration-300 group-hover:text-primary-foreground" />
                             </div>
                             <h3 className="mt-6 font-heading text-xl font-bold uppercase">{highlight.title}</h3>
                             <p className="mt-2 text-muted-foreground">{highlight.description}</p>
@@ -155,7 +155,7 @@ export default function Home() {
                     <h3 className="font-heading text-3xl font-bold text-white uppercase transition-transform duration-300 group-hover:-translate-y-10">{collection.name}</h3>
                     <div className="transition-all duration-300 opacity-0 group-hover:opacity-100 -translate-y-4 group-hover:-translate-y-10">
                         <p className="mt-1 text-sm text-gray-300">{collection.description}</p>
-                        <div className="mt-2 flex items-center text-accent font-bold text-sm">
+                        <div className="mt-2 flex items-center text-primary font-bold text-sm">
                             <span>View Collection</span>
                             <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                         </div>
@@ -280,13 +280,13 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-accent">
+      <section className="bg-primary">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 text-center">
           <AnimateOnScroll>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold uppercase text-black">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold uppercase text-primary-foreground">
               Ready for Your Next Adventure?
             </h2>
-            <p className="mt-4 max-w-2xl mx-auto text-black/80">
+            <p className="mt-4 max-w-2xl mx-auto text-primary-foreground/80">
               Contact us today to get a quote, book a test ride, or find the perfect bike for your needs.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
@@ -297,7 +297,7 @@ export default function Home() {
               >
                 Chat on WhatsApp
               </WhatsappButton>
-              <Button asChild size="lg" className="bg-black text-white hover:bg-black/80">
+              <Button asChild size="lg" variant="outline" className="bg-transparent text-primary-foreground border-primary-foreground hover:bg-primary-foreground hover:text-primary">
                 <Link href="/collections">
                   Browse All Bikes
                 </Link>

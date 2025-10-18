@@ -88,7 +88,7 @@ export default function ProductPage({ params }: { params: { handle: string } }) 
             <ul className="mt-6 space-y-2 text-muted-foreground">
               {product.highlights.map((highlight) => (
                 <li key={highlight} className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-accent" />
+                  <CheckCircle className="h-5 w-5 text-primary" />
                   <span>{highlight}</span>
                 </li>
               ))}
@@ -99,7 +99,7 @@ export default function ProductPage({ params }: { params: { handle: string } }) 
             <WhatsappButton
               size="lg"
               message={whatsappMessage}
-              className="bg-accent text-black hover:bg-accent-600 w-full"
+              className="bg-primary text-primary-foreground w-full"
             >
               Inquire on WhatsApp
             </WhatsappButton>

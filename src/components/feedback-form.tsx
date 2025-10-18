@@ -121,7 +121,7 @@ export function FeedbackForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" size="lg" className="w-full bg-accent text-black hover:bg-accent-600">
+        <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground">
           Submit Feedback
         </Button>
       </form>

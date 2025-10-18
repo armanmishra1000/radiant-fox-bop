@@ -29,28 +29,28 @@ export default function ContactPage() {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-start gap-4">
-                <MapPin className="h-6 w-6 text-accent mt-1" />
+                <MapPin className="h-6 w-6 text-primary mt-1" />
                 <div>
                   <p className="font-semibold">Thumpstar Demo Dealer</p>
                   <p className="text-muted-foreground">123 Powersports Lane<br />Motocross City, USA 54321</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <Phone className="h-6 w-6 text-accent mt-1" />
+                <Phone className="h-6 w-6 text-primary mt-1" />
                 <div>
                   <p className="font-semibold">Phone</p>
-                  <a href="tel:1-800-555-1234" className="text-muted-foreground hover:text-accent">1-800-555-1234</a>
+                  <a href="tel:1-800-555-1234" className="text-muted-foreground hover:text-primary">1-800-555-1234</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <Mail className="h-6 w-6 text-accent mt-1" />
+                <Mail className="h-6 w-6 text-primary mt-1" />
                 <div>
                   <p className="font-semibold">Email</p>
-                  <a href="mailto:sales@thumpstardemo.com" className="text-muted-foreground hover:text-accent">sales@thumpstardemo.com</a>
+                  <a href="mailto:sales@thumpstardemo.com" className="text-muted-foreground hover:text-primary">sales@thumpstardemo.com</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <Clock className="h-6 w-6 text-accent mt-1" />
+                <Clock className="h-6 w-6 text-primary mt-1" />
                 <div>
                   <p className="font-semibold">Hours</p>
                   <p className="text-muted-foreground">Mon - Fri: 9:00 AM - 6:00 PM<br />Sat: 10:00 AM - 4:00 PM</p>
@@ -70,7 +70,7 @@ export default function ContactPage() {
               <WhatsappButton
                 size="lg"
                 message="Hello, I have a sales question."
-                className="w-full bg-accent text-black hover:bg-accent-600"
+                className="w-full bg-primary text-primary-foreground"
               >
                 Contact Sales
               </WhatsappButton>

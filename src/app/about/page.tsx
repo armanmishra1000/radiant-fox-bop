@@ -75,7 +75,7 @@ export default function AboutPage() {
                     <Card key={value} className="text-center">
                         <CardHeader>
                             <CardTitle className="flex flex-col items-center gap-3">
-                                <CheckCircle className="h-8 w-8 text-accent" />
+                                <CheckCircle className="h-8 w-8 text-primary" />
                                 <span>{value}</span>
                             </CardTitle>
                         </CardHeader>

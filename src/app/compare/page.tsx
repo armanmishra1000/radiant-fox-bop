@@ -27,7 +27,7 @@ export default function ComparePage() {
         <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
           Your compare list is empty. Add some products to see a side-by-side comparison.
         </p>
-        <Button asChild size="lg" className="mt-8 bg-accent text-black hover:bg-accent-600">
+        <Button asChild size="lg" className="mt-8 bg-primary text-primary-foreground">
           <Link href="/collections">
             Browse Products
           </Link>
@@ -71,7 +71,7 @@ export default function ComparePage() {
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    <Link href={`/products/${item.handle}`} className="font-bold hover:text-accent">
+                    <Link href={`/products/${item.handle}`} className="font-bold hover:text-primary">
                       {item.title}
                     </Link>
                     <Button
@@ -91,7 +91,7 @@ export default function ComparePage() {
             <TableRow>
               <TableCell className="font-bold">MSRP</TableCell>
               {compareItems.map((item) => (
-                <TableCell key={item.id} className="text-center font-bold text-lg text-accent">
+                <TableCell key={item.id} className="text-center font-bold text-lg text-primary">
                   {item.msrp ? `$${item.msrp.toLocaleString()}` : "-"}
                 </TableCell>
               ))}

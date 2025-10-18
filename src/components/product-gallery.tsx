@@ -35,8 +35,8 @@ export function ProductGallery({ images }: ProductGalleryProps) {
             onClick={() => setSelectedImage(image)}
             className={cn(
               "aspect-square rounded-lg bg-bg-dark p-1 overflow-hidden transition-all",
-              "ring-2 ring-transparent hover:ring-accent focus:outline-none focus:ring-accent",
-              selectedImage.url === image.url && "ring-accent"
+              "ring-2 ring-transparent hover:ring-primary focus:outline-none focus:ring-primary",
+              selectedImage.url === image.url && "ring-primary"
             )}
           >
             <Image
