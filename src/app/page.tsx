@@ -1,3 +1,6 @@
+"use client";
+
+import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Frame, GitCommit, Lightbulb } from "lucide-react";
@@ -16,6 +19,8 @@ import { TestimonialCard } from "@/components/testimonial-card";
 import { galleryImages } from "@/data/gallery";
 import { WhatsappButton } from "@/components/whatsapp-button";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
+import { ProductQuickView } from "@/components/product-quick-view";
+import type { Product } from "@/lib/types";
 
 const collections = [
   {
@@ -60,11 +65,22 @@ const highlights = [
 ]
 
 export default function Home() {
+  const [quickViewProduct, setQuickViewProduct] = React.useState<Product | null>(null);
   const featuredProducts = products.slice(0, 4);
   const featuredGalleryImages = galleryImages.slice(0, 4);
 
   return (
     <>
+      <ProductQuickView 
+        product={quickViewProduct}
+        open={!!quickViewProduct}
+        onOpenChange={(open) => {
+          if (!open) {
+            setQuickViewProduct(null);
+          }
+        }}
+      />
+
       {/* Hero Section */}
       <section className="relative h-[75vh] min-h-[500px] w-full bg-bg-dark text-white flex items-center justify-center text-center overflow-hidden">
         <Image
@@ -174,7 +190,7 @@ export default function Home() {
                 {featuredProducts.map((product) => (
                   <CarouselItem key={product.id} className="md:basis-1/2 lg:basis-1/3">
                     <div className="p-1">
-                      <ProductCard product={product} />
+                      <ProductCard product={product} onQuickView={setQuickViewProduct} />
                     </div>
                   </CarouselItem>
                 ))}
