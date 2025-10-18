@@ -96,8 +96,8 @@ export default function Home() {
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 {highlights.map((highlight) => (
-                    <div key={highlight.title}>
-                        <div className="flex items-center justify-center h-16 w-16 rounded-full bg-accent/20 mx-auto">
+                    <div key={highlight.title} className="group rounded-2xl p-6 transition-all duration-300 hover:bg-card hover:shadow-card hover:-translate-y-1">
+                        <div className="flex items-center justify-center h-16 w-16 rounded-full bg-accent/20 mx-auto transition-transform duration-300 group-hover:scale-110">
                             <highlight.icon className="h-8 w-8 text-accent" />
                         </div>
                         <h3 className="mt-6 font-heading text-xl font-bold uppercase">{highlight.title}</h3>
