@@ -1,9 +1,13 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import type { Product } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Eye } from "lucide-react";
+import { ArrowRight, Eye, PlusCircle, CheckCircle } from "lucide-react";
 import { Button } from "./ui/button";
+import { useCompare } from "@/context/compare-context";
+import { cn } from "@/lib/utils";
 
 const statusMap = {
   in_stock: { text: "In Stock", className: "bg-green-600 hover:bg-green-600" },
@@ -17,12 +21,14 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product, onQuickView }: ProductCardProps) {
+  const { addToCompare, isInCompare } = useCompare();
+  const isAdded = isInCompare(product.id);
   const statusInfo = product.status ? statusMap[product.status] : null;
 
   return (
     <article className="group relative flex flex-col rounded-2xl bg-card shadow-card overflow-hidden transition-transform duration-300 hover:-translate-y-1">
       {statusInfo && (
-        <Badge className={`absolute top-4 right-4 z-10 text-white ${statusInfo.className}`}>
+        <Badge className={cn("absolute top-4 right-4 z-10 text-white", statusInfo.className)}>
           {statusInfo.text}
         </Badge>
       )}
@@ -39,13 +45,26 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
             />
             </div>
         </Link>
-        <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="absolute inset-0 flex items-center justify-center gap-2 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <Button 
                 variant="outline" 
                 className="bg-background/80 hover:bg-background"
                 onClick={() => onQuickView(product)}
             >
                 <Eye className="mr-2 h-4 w-4" /> Quick View
+            </Button>
+            <Button
+                variant="outline"
+                className="bg-background/80 hover:bg-background"
+                onClick={() => addToCompare(product.id)}
+                disabled={isAdded}
+            >
+                {isAdded ? (
+                    <CheckCircle className="mr-2 h-4 w-4 text-green-500" />
+                ) : (
+                    <PlusCircle className="mr-2 h-4 w-4" />
+                )}
+                {isAdded ? "Added" : "Compare"}
             </Button>
         </div>
       </div>

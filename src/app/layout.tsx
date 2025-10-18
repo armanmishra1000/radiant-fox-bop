@@ -5,6 +5,8 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import { Toaster } from "@/components/ui/sonner";
+import { CompareProvider } from "@/context/compare-context";
+import { CompareTray } from "@/components/compare-tray";
 
 const oswald = Oswald({
   variable: "--font-heading",
@@ -32,13 +34,16 @@ export default function RootLayout({
       <body
         className={`${oswald.variable} ${inter.variable} font-body antialiased`}
       >
-        <div className="relative flex min-h-screen flex-col bg-background">
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          <MadeWithDyad />
-        </div>
-        <Toaster />
+        <CompareProvider>
+          <div className="relative flex min-h-screen flex-col bg-background">
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+            <MadeWithDyad />
+          </div>
+          <CompareTray />
+          <Toaster />
+        </CompareProvider>
       </body>
     </html>
   );
