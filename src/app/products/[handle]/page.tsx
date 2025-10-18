@@ -1,10 +1,11 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { products } from "@/data/products";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
-import { CheckCircle, Phone } from "lucide-react";
+import { CheckCircle, Phone, Calculator } from "lucide-react";
 import { ProductGallery } from "@/components/product-gallery";
 import { WhatsappButton } from "@/components/whatsapp-button";
 import type { Metadata } from "next";
@@ -84,6 +85,13 @@ export default function ProductPage({ params }: { params: { handle: string } }) 
             >
               Inquire on WhatsApp
             </WhatsappButton>
+            {product.msrp && (
+                <Button asChild size="lg" variant="secondary" className="w-full">
+                    <Link href={`/financing?price=${product.msrp}`}>
+                        <Calculator className="mr-2 h-5 w-5" /> Calculate Financing
+                    </Link>
+                </Button>
+            )}
             <Button size="lg" variant="outline" className="w-full flex items-center gap-2">
               <Phone className="h-5 w-5" /> Call for Details: 1-800-555-1234
             </Button>
