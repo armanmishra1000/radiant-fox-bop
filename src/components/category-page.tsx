@@ -1,4 +1,8 @@
+"use client";
+
+import * as React from "react";
 import { ProductCard } from "@/components/product-card";
+import { ProductFilters } from "@/components/product-filters";
 import type { Product } from "@/lib/types";
 
 interface CategoryPageProps {
@@ -8,6 +12,27 @@ interface CategoryPageProps {
 }
 
 export function CategoryPage({ title, description, products }: CategoryPageProps) {
+  const [sortOption, setSortOption] = React.useState("default");
+  const [statusFilters, setStatusFilters] = React.useState<string[]>([]);
+
+  const filteredAndSortedProducts = React.useMemo(() => {
+    let filtered = [...products];
+
+    // Apply status filters
+    if (statusFilters.length > 0) {
+      filtered = filtered.filter(p => p.status && statusFilters.includes(p.status));
+    }
+
+    // Apply sorting
+    if (sortOption === "price-asc") {
+      filtered.sort((a, b) => (a.msrp || 0) - (b.msrp || 0));
+    } else if (sortOption === "price-desc") {
+      filtered.sort((a, b) => (b.msrp || 0) - (a.msrp || 0));
+    }
+
+    return filtered;
+  }, [products, sortOption, statusFilters]);
+
   return (
     <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
       <div className="text-center">
@@ -17,17 +42,27 @@ export function CategoryPage({ title, description, products }: CategoryPageProps
         </p>
       </div>
 
-      {products.length > 0 ? (
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-      ) : (
-        <div className="mt-12 text-center">
-          <p className="text-muted-foreground">No products found in this category.</p>
-        </div>
-      )}
+      <div className="mt-12">
+        <ProductFilters
+          onSortChange={setSortOption}
+          onStatusChange={setStatusFilters}
+        />
+
+        {filteredAndSortedProducts.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredAndSortedProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        ) : (
+          <div className="mt-12 text-center py-16 border rounded-lg">
+            <h3 className="text-lg font-semibold">No products found</h3>
+            <p className="text-muted-foreground mt-2">
+              Try adjusting your filters to see more results.
+            </p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
