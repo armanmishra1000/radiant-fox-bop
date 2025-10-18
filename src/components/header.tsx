@@ -13,6 +13,7 @@ const navLinks = [
   { href: "/atv", label: "ATVs" },
   { href: "/parts", label: "Parts" },
   { href: "/workshop", label: "Workshop" },
+  { href: "/graphics", label: "Graphics" },
   { href: "/database", label: "Database" },
   { href: "/gallery", label: "Gallery" },
 ];
