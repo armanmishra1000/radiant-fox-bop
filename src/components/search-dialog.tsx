@@ -17,16 +17,16 @@ import { products } from "@/data/products";
 import type { Product } from "@/lib/types";
 import { Button } from "./ui/button";
 
+const fuse = new Fuse(products, {
+  keys: ["title", "family", "handle"],
+  threshold: 0.3,
+});
+
 export function SearchDialog() {
   const [open, setOpen] = React.useState(false);
   const router = useRouter();
-
-  const fuse = new Fuse(products, {
-    keys: ["title", "family", "handle"],
-    threshold: 0.3,
-  });
-
   const [query, setQuery] = React.useState("");
+  
   const results = query ? fuse.search(query).map((result) => result.item) : [];
 
   React.useEffect(() => {
@@ -51,6 +51,15 @@ export function SearchDialog() {
     });
   };
 
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (query) {
+      runCommand(() => {
+        router.push(`/search?q=${encodeURIComponent(query)}`);
+      });
+    }
+  };
+
   return (
     <>
       <Button
@@ -67,11 +76,13 @@ export function SearchDialog() {
         </kbd>
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput
-          placeholder="Search for bikes, ATVs, or parts..."
-          value={query}
-          onValueChange={setQuery}
-        />
+        <form onSubmit={handleSearchSubmit}>
+          <CommandInput
+            placeholder="Search for bikes, ATVs, or parts..."
+            value={query}
+            onValueChange={setQuery}
+          />
+        </form>
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           {results.length > 0 && (
