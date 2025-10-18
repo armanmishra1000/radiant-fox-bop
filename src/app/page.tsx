@@ -14,6 +14,7 @@ import { products } from "@/data/products";
 import { testimonials } from "@/data/testimonials";
 import { TestimonialCard } from "@/components/testimonial-card";
 import { galleryImages } from "@/data/gallery";
+import { WhatsappButton } from "@/components/whatsapp-button";
 
 const collections = [
   {
@@ -87,9 +88,14 @@ export default function Home() {
                 Explore Bikes <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-accent text-accent hover:bg-accent hover:text-black">
-              Book a Test Ride
-            </Button>
+            <WhatsappButton
+              size="lg"
+              variant="outline"
+              message="Hello, I'm interested in learning more about your bikes."
+              className="border-accent text-accent hover:bg-accent hover:text-black"
+            >
+              Inquire on WhatsApp
+            </WhatsappButton>
           </div>
         </div>
       </section>
@@ -236,11 +242,13 @@ export default function Home() {
             Contact us today to get a quote, book a test ride, or find the perfect bike for your needs.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" variant="secondary">
-              <Link href="/contact">
-                Contact Us
-              </Link>
-            </Button>
+            <WhatsappButton
+              size="lg"
+              variant="secondary"
+              message="Hello! I have a question and would like to chat."
+            >
+              Chat on WhatsApp
+            </WhatsappButton>
             <Button asChild size="lg" className="bg-black text-white hover:bg-black/80">
               <Link href="/collections">
                 Browse All Bikes

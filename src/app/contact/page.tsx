@@ -1,43 +1,12 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { WhatsappButton } from "@/components/whatsapp-button";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact Us | Thumpstar Demo",
-  description: "Get in touch with our sales, service, or parts departments.",
+  description: "Get in touch with our sales, service, or parts departments via WhatsApp.",
 };
-
-const ContactForm = ({ subject }: { subject: string }) => (
-  <form className="space-y-4">
-    <input type="hidden" name="subject" value={subject} />
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <div className="space-y-2">
-        <Label htmlFor={`name-${subject}`}>Full Name</Label>
-        <Input id={`name-${subject}`} placeholder="John Doe" />
-      </div>
-      <div className="space-y-2">
-        <Label htmlFor={`email-${subject}`}>Email Address</Label>
-        <Input id={`email-${subject}`} type="email" placeholder="john.doe@example.com" />
-      </div>
-    </div>
-    <div className="space-y-2">
-      <Label htmlFor={`phone-${subject}`}>Phone Number (Optional)</Label>
-      <Input id={`phone-${subject}`} type="tel" placeholder="(123) 456-7890" />
-    </div>
-    <div className="space-y-2">
-      <Label htmlFor={`message-${subject}`}>Message</Label>
-      <Textarea id={`message-${subject}`} placeholder="How can we help you today?" rows={5} />
-    </div>
-    <Button type="submit" size="lg" className="w-full bg-accent text-black hover:bg-accent-600">
-      Send Message
-    </Button>
-  </form>
-);
 
 export default function ContactPage() {
   return (
@@ -47,7 +16,7 @@ export default function ContactPage() {
           Contact Us
         </h1>
         <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
-          Have a question? We're here to help. Reach out to the right department below.
+          Have a question? We're here to help. The best way to reach us is via WhatsApp.
         </p>
       </div>
 
@@ -91,24 +60,38 @@ export default function ContactPage() {
           </Card>
         </div>
 
-        {/* Contact Form */}
+        {/* WhatsApp CTAs */}
         <div>
-          <Tabs defaultValue="sales" className="w-full">
-            <TabsList className="grid w-full grid-cols-3">
-              <TabsTrigger value="sales">Sales</TabsTrigger>
-              <TabsTrigger value="service">Service</TabsTrigger>
-              <TabsTrigger value="parts">Parts</TabsTrigger>
-            </TabsList>
-            <TabsContent value="sales" className="mt-6">
-              <ContactForm subject="Sales Inquiry" />
-            </TabsContent>
-            <TabsContent value="service" className="mt-6">
-              <ContactForm subject="Service Request" />
-            </TabsContent>
-            <TabsContent value="parts" className="mt-6">
-              <ContactForm subject="Parts Question" />
-            </TabsContent>
-          </Tabs>
+          <Card>
+            <CardHeader>
+              <CardTitle className="font-heading uppercase">Chat with a Department</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <WhatsappButton
+                size="lg"
+                message="Hello, I have a sales question."
+                className="w-full bg-accent text-black hover:bg-accent-600"
+              >
+                Contact Sales
+              </WhatsappButton>
+              <WhatsappButton
+                size="lg"
+                message="Hello, I'd like to request a service appointment."
+                className="w-full"
+                variant="secondary"
+              >
+                Contact Service
+              </WhatsappButton>
+              <WhatsappButton
+                size="lg"
+                message="Hello, I have a question about parts."
+                className="w-full"
+                variant="secondary"
+              >
+                Contact Parts
+              </WhatsappButton>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

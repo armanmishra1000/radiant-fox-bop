@@ -5,6 +5,7 @@ import { Menu, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { SearchDialog } from "./search-dialog";
+import { WhatsAppIcon } from "./icons/whatsapp-icon";
 
 const navLinks = [
   { href: "/dirt-bike", label: "Dirt Bikes" },
@@ -16,6 +17,9 @@ const navLinks = [
   { href: "/gallery", label: "Gallery" },
 ];
 
+const WHATSAPP_PHONE_NUMBER = "15551234567";
+const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${encodeURIComponent("Hello! I have a question.")}`;
+
 export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -23,6 +27,10 @@ export function Header() {
       <div className="bg-bg-dark text-white">
         <div className="container mx-auto flex h-10 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 text-sm">
           <div className="flex items-center gap-4">
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-accent">
+              <WhatsAppIcon className="h-4 w-4" />
+              <span className="hidden sm:inline">Chat on WhatsApp</span>
+            </a>
             <a href="tel:1-800-555-1234" className="flex items-center gap-2 hover:text-accent">
               <Phone size={16} />
               <span className="hidden sm:inline">1-800-555-1234</span>

@@ -6,6 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { CheckCircle, Phone } from "lucide-react";
 import { ProductGallery } from "@/components/product-gallery";
+import { WhatsappButton } from "@/components/whatsapp-button";
 import type { Metadata } from "next";
 
 type Props = {
@@ -41,6 +42,7 @@ export default function ProductPage({ params }: { params: { handle: string } }) 
   }
 
   const statusInfo = product.status ? statusMap[product.status] : null;
+  const whatsappMessage = `Hello, I'm interested in the ${product.title}. Can you provide more details?`;
 
   return (
     <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
@@ -74,10 +76,15 @@ export default function ProductPage({ params }: { params: { handle: string } }) 
             </ul>
           )}
 
-          <div className="mt-8 grid sm:grid-cols-2 gap-4">
-            <Button size="lg" className="bg-accent text-black hover:bg-accent-600">Request Quote</Button>
-            <Button size="lg" variant="outline">Book Test Ride</Button>
-            <Button size="lg" variant="outline" className="sm:col-span-2 flex items-center gap-2">
+          <div className="mt-8 flex flex-col gap-4">
+            <WhatsappButton
+              size="lg"
+              message={whatsappMessage}
+              className="bg-accent text-black hover:bg-accent-600 w-full"
+            >
+              Inquire on WhatsApp
+            </WhatsappButton>
+            <Button size="lg" variant="outline" className="w-full flex items-center gap-2">
               <Phone className="h-5 w-5" /> Call for Details: 1-800-555-1234
             </Button>
           </div>
