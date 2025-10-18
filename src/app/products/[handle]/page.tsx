@@ -93,14 +93,14 @@ export default function ProductPage({ params }: { params: { handle: string } }) 
 
       {/* Tabs Section */}
       <div className="mt-12">
-        <Tabs defaultValue="specs">
+        <Tabs defaultValue="overview">
           <TabsList>
             <TabsTrigger value="overview">Overview</TabsTrigger>
             <TabsTrigger value="specs">Specifications</TabsTrigger>
             <TabsTrigger value="warranty">Warranty</TabsTrigger>
           </TabsList>
-          <TabsContent value="overview" className="mt-4">
-            <p>Overview content coming soon.</p>
+          <TabsContent value="overview" className="mt-4 prose prose-invert max-w-none">
+            <p>{product.overview || "Overview content coming soon."}</p>
           </TabsContent>
           <TabsContent value="specs" className="mt-4">
             {product.specs && product.specs.length > 0 ? (
@@ -120,8 +120,8 @@ export default function ProductPage({ params }: { params: { handle: string } }) 
               <p>No specifications available.</p>
             )}
           </TabsContent>
-          <TabsContent value="warranty" className="mt-4">
-            <p>Warranty information coming soon.</p>
+          <TabsContent value="warranty" className="mt-4 prose prose-invert max-w-none">
+            <p>{product.warranty || "Warranty information coming soon."}</p>
           </TabsContent>
         </Tabs>
       </div>

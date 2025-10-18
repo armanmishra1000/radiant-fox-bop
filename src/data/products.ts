@@ -24,7 +24,9 @@ export const products: Product[] = [
       { key: "Front Suspension", value: "VS1 forks" },
       { key: "Rear Suspension", value: "Linkage" },
       { key: "Brakes", value: "Hydraulic Disc (Front & Rear)" },
-    ]
+    ],
+    overview: "The TSX 140 GR is the ultimate pit bike for riders who demand performance. Featuring our signature Tri-Bar chassis for unmatched rigidity and advanced linkage suspension for a plush ride, this bike is built to dominate the backyard track. The potent 140cc engine provides ample power, while the VS1 forks ensure precise handling through any corner.",
+    warranty: "This product is covered by a 6-month manufacturer's warranty on parts. This warranty does not cover labor or damage caused by misuse, neglect, or improper assembly. All warranty claims must be submitted through an authorized dealer."
   },
   {
     id: "tfx250-en",
@@ -46,7 +48,9 @@ export const products: Product[] = [
       { key: "Transmission", value: "Manual 5-speed" },
       { key: "Carburetor", value: "Nibbi PE30" },
       { key: "Final Drive", value: "Chain" },
-    ]
+    ],
+    overview: "Built for the trail, the TFX 250 EN combines a powerful 250cc Zongshen engine with a lightweight, agile chassis. Fully adjustable suspension allows you to dial in the ride for any terrain, while the Enduro-spec lighting system means your adventure doesn't have to end when the sun goes down. This is the perfect machine for serious trail riders and enduro racers.",
+    warranty: "This product is covered by a 12-month manufacturer's warranty on parts. This warranty does not cover labor or damage caused by misuse, neglect, or improper assembly. All warranty claims must be submitted through an authorized dealer."
   },
   {
     id: "atx125-ut",
@@ -68,6 +72,8 @@ export const products: Product[] = [
       { key: "Transmission", value: "Automatic (F-N-R)" },
       { key: "Starting", value: "Electric Start" },
       { key: "Racks", value: "Front & Rear" },
-    ]
+    ],
+    overview: "The ATX 125 UT is a rugged and reliable workhorse. Featuring front and rear utility racks, this ATV is ready to haul gear for any job. The smooth automatic transmission with forward, neutral, and reverse makes it easy to operate, while the electric start ensures hassle-free ignition every time. Perfect for property maintenance or exploring the trails.",
+    warranty: "This product is covered by a 6-month manufacturer's warranty on parts. This warranty does not cover labor or damage caused by misuse, neglect, or improper assembly. All warranty claims must be submitted through an authorized dealer."
   }
 ];

@@ -27,4 +27,6 @@ export type Product = {
   engine_cc?: number;
   seat_height_mm?: number;
   weight_kg?: number;
+  overview?: string;
+  warranty?: string;
 };
