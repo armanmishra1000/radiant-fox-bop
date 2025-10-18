@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import type { GalleryImage } from "@/data/gallery";
@@ -59,6 +59,9 @@ export function GalleryLightbox({
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <DialogContent className="max-w-6xl w-full p-0 bg-transparent border-0 shadow-none flex items-center justify-center focus:outline-none">
+        <DialogHeader className="sr-only">
+          <DialogTitle>Image Lightbox</DialogTitle>
+        </DialogHeader>
         <div className="relative w-full h-full">
           <Image
             key={selectedImage.id}
