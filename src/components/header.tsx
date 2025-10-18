@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, Search, Phone, Mail } from "lucide-react";
+import { Menu, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { SearchDialog } from "./search-dialog";
 
 const navLinks = [
   { href: "/dirt-bike", label: "Dirt Bikes" },
@@ -55,11 +56,8 @@ export function Header() {
           </nav>
         </div>
 
-        <div className="flex items-center gap-4">
-          <Button variant="ghost" size="icon">
-            <Search className="h-5 w-5" />
-            <span className="sr-only">Search</span>
-          </Button>
+        <div className="flex items-center gap-2">
+          <SearchDialog />
           
           <Sheet>
             <SheetTrigger asChild>
