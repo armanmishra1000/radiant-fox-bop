@@ -23,6 +23,7 @@ export function Footer() {
               <li><Link href="/testimonials" className="hover:text-accent">Testimonials</Link></li>
               <li><Link href="/gallery" className="hover:text-accent">Gallery</Link></li>
               <li><Link href="/financing" className="hover:text-accent">Financing</Link></li>
+              <li><Link href="/feedback" className="hover:text-accent">Feedback</Link></li>
             </ul>
           </div>
           <div>
