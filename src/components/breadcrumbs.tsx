@@ -24,9 +24,9 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
   return (
     <Breadcrumb>
       <BreadcrumbList>
-        {items.map((item, index) => (
-          <React.Fragment key={item.label}>
-            <BreadcrumbItem>
+        {items.reduce((acc, item, index) => {
+          acc.push(
+            <BreadcrumbItem key={item.label}>
               {item.href ? (
                 <BreadcrumbLink asChild>
                   <Link href={item.href}>{item.label}</Link>
@@ -35,9 +35,14 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                 <BreadcrumbPage>{item.label}</BreadcrumbPage>
               )}
             </BreadcrumbItem>
-            {index < items.length - 1 && <BreadcrumbSeparator />}
-          </React.Fragment>
-        ))}
+          );
+
+          if (index < items.length - 1) {
+            acc.push(<BreadcrumbSeparator key={`sep-${index}`} />);
+          }
+
+          return acc;
+        }, [] as React.ReactNode[])}
       </BreadcrumbList>
     </Breadcrumb>
   );
