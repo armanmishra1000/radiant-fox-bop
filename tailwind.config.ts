@@ -9,6 +9,10 @@ export default {
   ],
   theme: {
   	extend: {
+      fontFamily: {
+        heading: "var(--font-heading)",
+        body: "var(--font-body)",
+      },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -33,8 +37,9 @@ export default {
   				foreground: 'hsl(var(--muted-foreground))'
   			},
   			accent: {
-  				DEFAULT: 'hsl(var(--accent))',
-  				foreground: 'hsl(var(--accent-foreground))'
+  				DEFAULT: '#C6F000',
+          '600': '#B3DB00',
+          '700': '#9AC600',
   			},
   			destructive: {
   				DEFAULT: 'hsl(var(--destructive))',
@@ -59,13 +64,21 @@ export default {
   				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
-  			}
+  			},
+        bg: {
+          dark: '#0A0A0A',
+        }
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
-  			sm: 'calc(var(--radius) - 4px)'
+  			sm: 'calc(var(--radius) - 4px)',
+        xl: '1.25rem',
+        '2xl': '1.5rem',
   		},
+      boxShadow: {
+        card: '0 10px 24px rgba(0,0,0,.15)',
+      },
   		keyframes: {
   			'accordion-down': {
   				from: {
