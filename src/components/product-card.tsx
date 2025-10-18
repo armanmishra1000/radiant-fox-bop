@@ -60,7 +60,7 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
                 disabled={isAdded}
             >
                 {isAdded ? (
-                    <CheckCircle className="mr-2 h-4 w-4 text-green-500" />
+                    <CheckCircle className="mr-2 h-4 w-4 text-primary" />
                 ) : (
                     <PlusCircle className="mr-2 h-4 w-4" />
                 )}
