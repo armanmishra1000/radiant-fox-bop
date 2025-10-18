@@ -91,8 +91,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Collections Section */}
+      {/* Highlights Banner */}
       <section className="py-16 sm:py-24 bg-background">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                {highlights.map((highlight) => (
+                    <div key={highlight.title}>
+                        <div className="flex items-center justify-center h-16 w-16 rounded-full bg-accent/20 mx-auto">
+                            <highlight.icon className="h-8 w-8 text-accent" />
+                        </div>
+                        <h3 className="mt-6 font-heading text-xl font-bold uppercase">{highlight.title}</h3>
+                        <p className="mt-2 text-muted-foreground">{highlight.description}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+      </section>
+
+      {/* Featured Collections Section */}
+      <section className="py-16 sm:py-24 bg-bg-dark text-white">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {collections.map((collection) => (
@@ -114,10 +131,10 @@ export default function Home() {
       </section>
 
       {/* Featured Bikes Section */}
-      <section className="py-16 sm:py-24 bg-bg-dark">
+      <section className="py-16 sm:py-24 bg-background">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold uppercase text-white">Featured Bikes</h2>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold uppercase text-foreground">Featured Bikes</h2>
             <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
               Check out our most popular models, built for performance and reliability.
             </p>
@@ -142,23 +159,6 @@ export default function Home() {
             <CarouselPrevious className="hidden sm:flex" />
             <CarouselNext className="hidden sm:flex" />
           </Carousel>
-        </div>
-      </section>
-
-      {/* Highlights Banner */}
-      <section className="py-16 sm:py-24 bg-background">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                {highlights.map((highlight) => (
-                    <div key={highlight.title}>
-                        <div className="flex items-center justify-center h-16 w-16 rounded-full bg-accent/20 mx-auto">
-                            <highlight.icon className="h-8 w-8 text-accent" />
-                        </div>
-                        <h3 className="mt-6 font-heading text-xl font-bold uppercase">{highlight.title}</h3>
-                        <p className="mt-2 text-muted-foreground">{highlight.description}</p>
-                    </div>
-                ))}
-            </div>
         </div>
       </section>
 
