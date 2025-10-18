@@ -13,6 +13,7 @@ import { ProductCard } from "@/components/product-card";
 import { products } from "@/data/products";
 import { testimonials } from "@/data/testimonials";
 import { TestimonialCard } from "@/components/testimonial-card";
+import { galleryImages } from "@/data/gallery";
 
 const collections = [
   {
@@ -56,6 +57,7 @@ const highlights = [
 export default function Home() {
   const featuredProducts = products.slice(0, 4);
   const featuredTestimonials = testimonials.slice(0, 2);
+  const featuredGalleryImages = galleryImages.slice(0, 4);
 
   return (
     <>
@@ -174,6 +176,38 @@ export default function Home() {
                     <TestimonialCard key={testimonial.id} testimonial={testimonial} />
                 ))}
             </div>
+        </div>
+      </section>
+
+      {/* Latest Gallery Grid */}
+      <section className="py-16 sm:py-24 bg-background">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold uppercase text-foreground">From the Trail</h2>
+            <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
+              Capturing the adventure, one ride at a time.
+            </p>
+          </div>
+          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
+            {featuredGalleryImages.map((image) => (
+              <Link href="/gallery" key={image.id} className="group aspect-square relative overflow-hidden rounded-2xl block">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                />
+              </Link>
+            ))}
+          </div>
+          <div className="mt-12 text-center">
+            <Button asChild size="lg" variant="outline">
+              <Link href="/gallery">
+                View Full Gallery <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
     </>
