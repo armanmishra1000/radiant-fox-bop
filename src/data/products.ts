@@ -14,6 +14,8 @@ export const products: Product[] = [
       { url: "/placeholders/tsx140-1.webp", alt: "TSX 140 side profile" },
       { url: "/placeholders/tsx140-2.webp", alt: "TSX 140 front three-quarter" },
       { url: "/placeholders/tsx140-3.webp", alt: "TSX 140 rear three-quarter" },
+      { url: "/placeholders/gallery/gallery-2.webp", alt: "Close-up of a pit bike engine" },
+      { url: "/placeholders/gallery/gallery-4.webp", alt: "Rider on a pit bike" },
     ],
     highlights: ["Tri-Bar chassis", "Linkage suspension", "VS1 forks"],
     specs: [
@@ -35,6 +37,8 @@ export const products: Product[] = [
     hero: { url: "/placeholders/tfx250-1.webp", alt: "TFX 250 Enduro side profile" },
     gallery: [
         { url: "/placeholders/tfx250-1.webp", alt: "TFX 250 Enduro side profile" },
+        { url: "/placeholders/gallery/gallery-1.webp", alt: "Rider on a dirt bike" },
+        { url: "/placeholders/gallery/gallery-5.webp", alt: "Dirt bike in a forest" },
     ],
     highlights: ["250cc Zongshen engine", "Enduro spec lighting", "Adjustable suspension"],
     specs: [
@@ -55,6 +59,8 @@ export const products: Product[] = [
     hero: { url: "/placeholders/atx125-1.webp", alt: "ATX 125 Utility ATV" },
     gallery: [
         { url: "/placeholders/atx125-1.webp", alt: "ATX 125 Utility ATV" },
+        { url: "/placeholders/gallery/gallery-3.webp", alt: "ATV on a scenic overlook" },
+        { url: "/placeholders/gallery/gallery-6.webp", alt: "ATV after a muddy ride" },
     ],
     highlights: ["Utility racks", "Automatic transmission", "Electric start"],
     specs: [

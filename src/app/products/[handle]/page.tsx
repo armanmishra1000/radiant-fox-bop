@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import { products } from "@/data/products";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { CheckCircle, Phone } from "lucide-react";
+import { ProductGallery } from "@/components/product-gallery";
 import type { Metadata } from "next";
 
 type Props = {
@@ -47,16 +47,7 @@ export default function ProductPage({ params }: { params: { handle: string } }) 
       <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
         {/* Image Gallery */}
         <div>
-          <div className="aspect-[4/3] bg-bg-dark rounded-2xl p-4">
-            <Image
-              src={product.hero.url}
-              alt={product.hero.alt}
-              width={800}
-              height={600}
-              className="w-full h-full object-contain"
-            />
-          </div>
-          {/* Thumbnail rail can be added here */}
+          <ProductGallery images={product.gallery} />
         </div>
 
         {/* Product Info */}
@@ -98,7 +89,7 @@ export default function ProductPage({ params }: { params: { handle: string } }) 
         <Tabs defaultValue="specs">
           <TabsList>
             <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="specs">Specifications</TabsTrigger>
+            <TabsTrigger value="specs">Specifications</Tabs-Trigger>
             <TabsTrigger value="warranty">Warranty</TabsTrigger>
           </TabsList>
           <TabsContent value="overview" className="mt-4">
