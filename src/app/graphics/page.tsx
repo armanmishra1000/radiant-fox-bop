@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
@@ -18,22 +17,23 @@ import {
   RadioGroupItem,
 } from "@/components/ui/radio-group";
 import { WhatsappButton } from "@/components/whatsapp-button";
+import { cn } from "@/lib/utils";
 
 const graphicKits = [
-  { id: "standard", name: "Standard Issue", price: 0 },
-  { id: "flow", name: "Flow Series", price: 49.99 },
-  { id: "velocity", name: "Velocity Series", price: 59.99 },
+  { id: "standard", name: "Standard Issue", price: 0, preview: "/placeholders/tsx140-1.webp" },
+  { id: "flow", name: "Flow Series", price: 49.99, preview: "/placeholders/tsx140-2.webp" },
+  { id: "velocity", name: "Velocity Series", price: 59.99, preview: "/placeholders/tsx140-3.webp" },
 ];
 
 export default function GraphicsPage() {
   const [name, setName] = React.useState("Your Name");
   const [number, setNumber] = React.useState("7");
-  const [selectedKit, setSelectedKit] = React.useState(graphicKits[0].id);
+  const [selectedKitId, setSelectedKitId] = React.useState(graphicKits[0].id);
 
-  const currentKit = graphicKits.find(kit => kit.id === selectedKit);
-  const totalPrice = currentKit?.price ?? 0;
+  const selectedKit = graphicKits.find(kit => kit.id === selectedKitId) || graphicKits[0];
+  const totalPrice = selectedKit.price;
 
-  const whatsappMessage = `Hello, I'd like to order a graphics kit with the following details:\n- Kit: ${currentKit?.name}\n- Name: ${name}\n- Number: ${number}`;
+  const whatsappMessage = `Hello, I'd like to order a graphics kit with the following details:\n- Kit: ${selectedKit.name}\n- Name: ${name}\n- Number: ${number}`;
 
   return (
     <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
@@ -51,24 +51,27 @@ export default function GraphicsPage() {
         <div className="lg:col-span-2">
           <Card className="overflow-hidden sticky top-24">
             <CardContent className="p-0">
-              <div className="aspect-[4/3] relative bg-gray-100 dark:bg-gray-800">
+              <div className="aspect-[4/3] relative bg-bg-dark">
                 <Image
-                  src="/placeholders/graphics-template.webp"
-                  alt="Bike graphics template"
+                  key={selectedKit.id}
+                  src={selectedKit.preview}
+                  alt={`${selectedKit.name} graphics kit preview`}
                   fill
-                  className="object-contain"
+                  className="object-contain animate-in fade-in-50 duration-300"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-black -translate-y-4">
+                  <div 
+                    className="text-center text-black -translate-y-4 transform -skew-y-6"
+                  >
                     <p
-                      className="font-bold text-5xl md:text-7xl"
-                      style={{ WebkitTextStroke: "2px white" }}
+                      className="font-heading font-bold text-5xl md:text-8xl"
+                      style={{ WebkitTextStroke: "3px white", paintOrder: "stroke fill" }}
                     >
                       {number || "0"}
                     </p>
                     <p
-                      className="font-semibold text-2xl md:text-3xl uppercase -mt-2"
-                      style={{ WebkitTextStroke: "1px white" }}
+                      className="font-heading font-bold text-2xl md:text-3xl uppercase -mt-2"
+                      style={{ WebkitTextStroke: "2px white", paintOrder: "stroke fill" }}
                     >
                       {name || "Your Name"}
                     </p>
@@ -109,20 +112,30 @@ export default function GraphicsPage() {
               <div className="space-y-3">
                 <Label>Select Graphics Kit</Label>
                 <RadioGroup
-                  value={selectedKit}
-                  onValueChange={setSelectedKit}
-                  className="space-y-2"
+                  value={selectedKitId}
+                  onValueChange={setSelectedKitId}
+                  className="grid grid-cols-3 gap-2"
                 >
                   {graphicKits.map((kit) => (
-                    <Label
-                      key={kit.id}
-                      htmlFor={kit.id}
-                      className="flex items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:border-primary"
-                    >
-                      <span className="font-semibold">{kit.name}</span>
-                      <span>{kit.price > 0 ? `$${kit.price}` : "Included"}</span>
+                    <div key={kit.id}>
                       <RadioGroupItem value={kit.id} id={kit.id} className="sr-only" />
-                    </Label>
+                      <Label
+                        htmlFor={kit.id}
+                        className={cn(
+                            "block rounded-lg border-2 p-1 cursor-pointer",
+                            selectedKitId === kit.id ? "border-accent ring-2 ring-accent" : "border-muted"
+                        )}
+                      >
+                        <Image 
+                            src={kit.preview}
+                            alt={kit.name}
+                            width={100}
+                            height={75}
+                            className="aspect-[4/3] object-cover w-full rounded-md"
+                        />
+                        <span className="block text-center text-xs font-semibold mt-1">{kit.name}</span>
+                      </Label>
+                    </div>
                   ))}
                 </RadioGroup>
               </div>
