@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { MadeWithDyad } from "@/components/made-with-dyad";
+import { Toaster } from "@/components/ui/sonner";
 
 const oswald = Oswald({
   variable: "--font-heading",
@@ -37,6 +38,7 @@ export default function RootLayout({
           <Footer />
           <MadeWithDyad />
         </div>
+        <Toaster />
       </body>
     </html>
   );

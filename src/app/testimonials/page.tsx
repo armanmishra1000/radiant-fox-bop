@@ -1,14 +1,22 @@
+"use client";
+
+import * as React from "react";
 import { testimonials } from "@/data/testimonials";
 import { TestimonialCard } from "@/components/testimonial-card";
 import { Button } from "@/components/ui/button";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Testimonials | Thumpstar Demo",
-  description: "See what our customers have to say about our bikes.",
-};
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { TestimonialForm } from "@/components/testimonial-form";
 
 export default function TestimonialsPage() {
+  const [open, setOpen] = React.useState(false);
+
   return (
     <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
       <div className="text-center">
@@ -27,9 +35,22 @@ export default function TestimonialsPage() {
       </div>
 
       <div className="mt-16 text-center">
-        <Button size="lg" className="bg-accent text-black hover:bg-accent-600">
-          Submit Your Testimonial
-        </Button>
+        <Dialog open={open} onOpenChange={setOpen}>
+          <DialogTrigger asChild>
+            <Button size="lg" className="bg-accent text-black hover:bg-accent-600">
+              Submit Your Testimonial
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="sm:max-w-[425px]">
+            <DialogHeader>
+              <DialogTitle>Share Your Feedback</DialogTitle>
+              <DialogDescription>
+                We'd love to hear about your experience. Fill out the form below to submit your testimonial.
+              </DialogDescription>
+            </DialogHeader>
+            <TestimonialForm setOpen={setOpen} />
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   );
