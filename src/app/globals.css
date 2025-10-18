@@ -167,4 +167,16 @@
   .animate-kenburns {
     animation: kenburns 30s ease-in-out infinite alternate;
   }
+
+  @keyframes pulse-bright {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(var(--primary) / 0.7);
+    }
+    50% {
+      box-shadow: 0 0 0 10px hsl(var(--primary) / 0);
+    }
+  }
+  .animate-pulse-bright {
+    animation: pulse-bright 2.5s infinite;
+  }
 }

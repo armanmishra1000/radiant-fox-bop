@@ -84,7 +84,7 @@ export default function Home() {
             Discover our range of high-performance dirt bikes, pit bikes, and ATVs built to conquer any terrain.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-400">
-            <Button asChild size="lg" className="bg-accent text-black hover:bg-accent-600">
+            <Button asChild size="lg" className="bg-accent text-black hover:bg-accent-600 animate-pulse-bright">
               <Link href="/collections">
                 Explore Bikes <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
@@ -108,8 +108,8 @@ export default function Home() {
                 {highlights.map((highlight, index) => (
                     <AnimateOnScroll key={highlight.title} delay={index * 150}>
                         <div className="group rounded-2xl p-6 transition-all duration-300 hover:bg-card hover:shadow-card hover:-translate-y-1">
-                            <div className="flex items-center justify-center h-16 w-16 rounded-full bg-accent/20 mx-auto transition-transform duration-300 group-hover:scale-110">
-                                <highlight.icon className="h-8 w-8 text-accent" />
+                            <div className="flex items-center justify-center h-16 w-16 rounded-full bg-accent/20 mx-auto transition-all duration-300 group-hover:scale-110 group-hover:bg-accent group-hover:rotate-6">
+                                <highlight.icon className="h-8 w-8 text-accent transition-colors duration-300 group-hover:text-black" />
                             </div>
                             <h3 className="mt-6 font-heading text-xl font-bold uppercase">{highlight.title}</h3>
                             <p className="mt-2 text-muted-foreground">{highlight.description}</p>
@@ -135,10 +135,16 @@ export default function Home() {
                       className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 p-6">
-                    <h3 className="font-heading text-3xl font-bold text-white uppercase">{collection.name}</h3>
-                    <p className="mt-1 text-sm text-gray-300">{collection.description}</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 p-6 w-full">
+                    <h3 className="font-heading text-3xl font-bold text-white uppercase transition-transform duration-300 group-hover:-translate-y-10">{collection.name}</h3>
+                    <div className="transition-all duration-300 opacity-0 group-hover:opacity-100 -translate-y-4 group-hover:-translate-y-10">
+                        <p className="mt-1 text-sm text-gray-300">{collection.description}</p>
+                        <div className="mt-2 flex items-center text-accent font-bold text-sm">
+                            <span>View Collection</span>
+                            <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                        </div>
+                    </div>
                   </div>
                 </Link>
               </AnimateOnScroll>
