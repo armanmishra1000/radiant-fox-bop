@@ -6,8 +6,10 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { SearchDialog } from "./search-dialog";
 import { WhatsAppIcon } from "./icons/whatsapp-icon";
+import { MegaMenu } from "./mega-menu";
 
-const navLinks = [
+// Mobile navigation links
+const mobileNavLinks = [
   { href: "/dirt-bike", label: "Dirt Bikes" },
   { href: "/pit-bike", label: "Pit Bikes" },
   { href: "/atv", label: "ATVs" },
@@ -53,16 +55,8 @@ export function Header() {
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <span className="font-heading text-2xl font-bold uppercase">Thumpstar</span>
           </Link>
-          <nav className="hidden gap-6 md:flex">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-foreground/60 transition-colors hover:text-foreground"
-              >
-                {link.label}
-              </Link>
-            ))}
+          <nav className="hidden md:flex">
+            <MegaMenu />
           </nav>
         </div>
 
@@ -81,7 +75,7 @@ export function Header() {
                 <span className="font-heading text-2xl font-bold uppercase">Thumpstar</span>
               </Link>
               <nav className="flex flex-col gap-4">
-                {navLinks.map((link) => (
+                {mobileNavLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
