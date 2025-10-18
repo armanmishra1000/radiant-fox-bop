@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Product } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
+import { ArrowRight } from "lucide-react";
 
 const statusMap = {
   in_stock: { text: "In Stock", className: "bg-green-600 hover:bg-green-600" },
@@ -40,7 +41,7 @@ export function ProductCard({ product }: { product: Product }) {
                 <span className="text-lg font-medium text-foreground">Request Quote</span>
                 )}
                 <span className="inline-flex items-center rounded-full bg-accent px-4 py-1.5 text-sm font-bold text-black">
-                View
+                  View <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
             </div>
           </div>

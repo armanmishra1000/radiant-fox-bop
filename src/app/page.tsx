@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Frame, GitCommit, Lightbulb } from "lucide-react";
+import { ArrowRight, Frame, GitCommit, Lightbulb, ZoomIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Carousel,
@@ -188,17 +188,14 @@ export default function Home() {
       </section>
 
       {/* Testimonials Teaser */}
-      <section className="relative py-24 sm:py-32 bg-bg-dark">
-        <div className="absolute inset-0">
-            <Image
-                src="/placeholders/gallery/gallery-3.webp"
-                alt="Scenic overlook with an ATV"
-                fill
-                className="object-cover"
-            />
-            <div className="absolute inset-0 bg-black/70"></div>
+      <section className="relative bg-bg-dark">
+        <div
+          className="absolute inset-0 bg-cover bg-fixed bg-center"
+          style={{ backgroundImage: "url(/placeholders/gallery/gallery-3.webp)" }}
+        >
+          <div className="absolute inset-0 bg-black/70" />
         </div>
-        <div className="relative container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
             <AnimateOnScroll className="text-center">
                 <h2 className="font-heading text-3xl md:text-4xl font-bold uppercase text-white">What Riders Are Saying</h2>
                 <p className="mt-4 max-w-2xl mx-auto text-gray-300">
@@ -235,6 +232,9 @@ export default function Home() {
                     className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
                     sizes="(max-width: 768px) 50vw, 25vw"
                   />
+                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <ZoomIn className="h-10 w-10 text-white" />
+                  </div>
                 </Link>
               </AnimateOnScroll>
             ))}
