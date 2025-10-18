@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Frame, GitCommit, Lightbulb, ZoomIn } from "lucide-react";
+import { ArrowRight, Frame, GitCommit, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Carousel,
@@ -203,11 +203,23 @@ export default function Home() {
                 </p>
             </AnimateOnScroll>
             <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                {featuredTestimonials.map((testimonial, index) => (
-                    <AnimateOnScroll key={testimonial.id} delay={index * 150}>
-                        <TestimonialCard testimonial={testimonial} />
+                {featuredTestimonials.length > 0 && (
+                    <AnimateOnScroll 
+                        key={featuredTestimonials[0].id} 
+                        animationClassName="animate-in fade-in slide-in-from-left-16 duration-700"
+                    >
+                        <TestimonialCard testimonial={featuredTestimonials[0]} />
                     </AnimateOnScroll>
-                ))}
+                )}
+                {featuredTestimonials.length > 1 && (
+                    <AnimateOnScroll 
+                        key={featuredTestimonials[1].id} 
+                        delay={150}
+                        animationClassName="animate-in fade-in slide-in-from-right-16 duration-700"
+                    >
+                        <TestimonialCard testimonial={featuredTestimonials[1]} />
+                    </AnimateOnScroll>
+                )}
             </div>
         </div>
       </section>
@@ -232,8 +244,9 @@ export default function Home() {
                     className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
                     sizes="(max-width: 768px) 50vw, 25vw"
                   />
-                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <ZoomIn className="h-10 w-10 text-white" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent transition-opacity duration-300"></div>
+                  <div className="absolute bottom-0 left-0 p-4 text-white opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                      <p className="font-bold text-sm line-clamp-2">{image.alt}</p>
                   </div>
                 </Link>
               </AnimateOnScroll>
