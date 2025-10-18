@@ -3,7 +3,6 @@ import { Oswald, Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { MadeWithDyad } from "@/components/made-with-dyad";
 import { Toaster } from "@/components/ui/sonner";
 import { CompareProvider } from "@/context/compare-context";
 import { CompareTray } from "@/components/compare-tray";
@@ -39,7 +38,6 @@ export default function RootLayout({
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />
-            <MadeWithDyad />
           </div>
           <CompareTray />
           <Toaster />
