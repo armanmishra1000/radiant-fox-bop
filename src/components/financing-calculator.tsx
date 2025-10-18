@@ -103,7 +103,7 @@ export function FinancingCalculator() {
 
   return (
     <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-      <Card>
+      <Card className="bg-dot-pattern">
         <CardHeader>
           <CardTitle>Payment Calculator</CardTitle>
         </CardHeader>

@@ -117,7 +117,7 @@ export default function Home() {
       </section>
 
       {/* Highlights Banner */}
-      <section className="py-16 sm:py-24 bg-background">
+      <section className="py-16 sm:py-24 bg-background bg-dot-pattern">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 {highlights.map((highlight, index) => (

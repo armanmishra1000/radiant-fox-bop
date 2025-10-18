@@ -72,7 +72,7 @@ export default function AboutPage() {
             </div>
             <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 {ourValues.map(value => (
-                    <Card key={value} className="text-center">
+                    <Card key={value} className="text-center bg-dot-pattern">
                         <CardHeader>
                             <CardTitle className="flex flex-col items-center gap-3">
                                 <CheckCircle className="h-8 w-8 text-primary" />
