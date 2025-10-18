@@ -89,7 +89,7 @@ export default function ProductPage({ params }: { params: { handle: string } }) 
         <Tabs defaultValue="specs">
           <TabsList>
             <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="specs">Specifications</Tabs-Trigger>
+            <TabsTrigger value="specs">Specifications</TabsTrigger>
             <TabsTrigger value="warranty">Warranty</TabsTrigger>
           </TabsList>
           <TabsContent value="overview" className="mt-4">
