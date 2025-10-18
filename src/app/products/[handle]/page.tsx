@@ -9,6 +9,8 @@ import { CheckCircle, Phone, Calculator } from "lucide-react";
 import { ProductGallery } from "@/components/product-gallery";
 import { WhatsappButton } from "@/components/whatsapp-button";
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { RelatedProducts } from "@/components/related-products";
 
 type Props = {
   params: { handle: string };
@@ -35,6 +37,13 @@ const statusMap = {
   sold_out: { text: "Sold Out", className: "bg-red-600 hover:bg-red-600" },
 };
 
+const familyToPath = {
+    'dirt-bike': { label: 'Dirt Bikes', href: '/dirt-bike' },
+    'pit-bike': { label: 'Pit Bikes', href: '/pit-bike' },
+    'atv': { label: 'ATVs', href: '/atv' },
+    'part': { label: 'Parts', href: '/parts' },
+}
+
 export default function ProductPage({ params }: { params: { handle: string } }) {
   const product = products.find((p) => p.handle === params.handle);
 
@@ -42,11 +51,20 @@ export default function ProductPage({ params }: { params: { handle: string } }) 
     notFound();
   }
 
+  const breadcrumbItems = [
+    { label: "Home", href: "/" },
+    familyToPath[product.family],
+    { label: product.title },
+  ].filter(Boolean);
+
   const statusInfo = product.status ? statusMap[product.status] : null;
   const whatsappMessage = `Hello, I'm interested in the ${product.title}. Can you provide more details?`;
 
   return (
     <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+      <div className="mb-8">
+        <Breadcrumbs items={breadcrumbItems} />
+      </div>
       <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
         {/* Image Gallery */}
         <div>
@@ -133,6 +151,7 @@ export default function ProductPage({ params }: { params: { handle: string } }) 
           </TabsContent>
         </Tabs>
       </div>
+      <RelatedProducts currentProductId={product.id} productFamily={product.family} />
     </div>
   );
 }

@@ -5,14 +5,21 @@ import { ProductCard } from "@/components/product-card";
 import { ProductFilters } from "@/components/product-filters";
 import type { Product } from "@/lib/types";
 import { ProductQuickView } from "@/components/product-quick-view";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
 
 interface CategoryPageProps {
   title: string;
   description: string;
   products: Product[];
+  breadcrumbs?: BreadcrumbItem[];
 }
 
-export function CategoryPage({ title, description, products }: CategoryPageProps) {
+export function CategoryPage({ title, description, products, breadcrumbs }: CategoryPageProps) {
   const [sortOption, setSortOption] = React.useState("default");
   const [statusFilters, setStatusFilters] = React.useState<string[]>([]);
   const [quickViewProduct, setQuickViewProduct] = React.useState<Product | null>(null);
@@ -47,6 +54,11 @@ export function CategoryPage({ title, description, products }: CategoryPageProps
         }}
       />
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+        {breadcrumbs && (
+          <div className="mb-8">
+            <Breadcrumbs items={breadcrumbs} />
+          </div>
+        )}
         <div className="text-center">
           <h1 className="font-heading text-4xl md:text-5xl font-bold uppercase">{title}</h1>
           <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">

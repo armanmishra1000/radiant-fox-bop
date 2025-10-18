@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   description: "Browse our selection of rugged and reliable ATVs.",
 };
 
+const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: "ATVs" }
+];
+
 export default function ATVPage() {
   const atvs = products.filter((p) => p.family === 'atv');
 
@@ -15,6 +20,7 @@ export default function ATVPage() {
       title="ATVs"
       description="Whether for work or play, our ATVs are designed to handle the toughest jobs and most challenging terrain. Find the right quad for your needs."
       products={atvs}
+      breadcrumbs={breadcrumbs}
     />
   );
 }

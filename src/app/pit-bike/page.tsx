@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   description: "Discover our range of fun and agile pit bikes.",
 };
 
+const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: "Pit Bikes" }
+];
+
 export default function PitBikePage() {
   const pitBikes = products.filter((p) => p.family === 'pit-bike');
 
@@ -15,6 +20,7 @@ export default function PitBikePage() {
       title="Pit Bikes"
       description="Perfect for backyard tracks and tight trails, our pit bikes deliver big fun in a compact package. Explore models for all ages and skill levels."
       products={pitBikes}
+      breadcrumbs={breadcrumbs}
     />
   );
 }
