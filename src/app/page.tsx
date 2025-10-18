@@ -61,7 +61,6 @@ const highlights = [
 
 export default function Home() {
   const featuredProducts = products.slice(0, 4);
-  const featuredTestimonials = testimonials.slice(0, 2);
   const featuredGalleryImages = galleryImages.slice(0, 4);
 
   return (
@@ -202,25 +201,27 @@ export default function Home() {
                     Real feedback from riders who trust our machines.
                 </p>
             </AnimateOnScroll>
-            <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                {featuredTestimonials.length > 0 && (
-                    <AnimateOnScroll 
-                        key={featuredTestimonials[0].id} 
-                        animationClassName="animate-in fade-in slide-in-from-left-16 duration-700"
-                    >
-                        <TestimonialCard testimonial={featuredTestimonials[0]} />
-                    </AnimateOnScroll>
-                )}
-                {featuredTestimonials.length > 1 && (
-                    <AnimateOnScroll 
-                        key={featuredTestimonials[1].id} 
-                        delay={150}
-                        animationClassName="animate-in fade-in slide-in-from-right-16 duration-700"
-                    >
-                        <TestimonialCard testimonial={featuredTestimonials[1]} />
-                    </AnimateOnScroll>
-                )}
-            </div>
+            <AnimateOnScroll delay={200}>
+              <Carousel
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                className="w-full max-w-4xl mx-auto mt-12"
+              >
+                <CarouselContent>
+                  {testimonials.map((testimonial) => (
+                    <CarouselItem key={testimonial.id} className="md:basis-1/2">
+                      <div className="p-1">
+                        <TestimonialCard testimonial={testimonial} />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="hidden sm:flex" />
+                <CarouselNext className="hidden sm:flex" />
+              </Carousel>
+            </AnimateOnScroll>
         </div>
       </section>
 

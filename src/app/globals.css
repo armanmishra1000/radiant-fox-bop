@@ -179,4 +179,9 @@
   .animate-pulse-bright {
     animation: pulse-bright 2.5s infinite;
   }
+
+  .bg-dot-pattern {
+    background-image: radial-gradient(circle at 1px 1px, hsl(var(--border)) 0.5px, transparent 0);
+    background-size: 1rem 1rem;
+  }
 }
