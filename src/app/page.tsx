@@ -169,11 +169,20 @@ export default function Home() {
       </section>
 
       {/* Testimonials Teaser */}
-      <section className="py-16 sm:py-24 bg-bg-dark">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative py-24 sm:py-32 bg-bg-dark">
+        <div className="absolute inset-0">
+            <Image
+                src="/placeholders/gallery/gallery-3.webp"
+                alt="Scenic overlook with an ATV"
+                fill
+                className="object-cover"
+            />
+            <div className="absolute inset-0 bg-black/70"></div>
+        </div>
+        <div className="relative container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center">
                 <h2 className="font-heading text-3xl md:text-4xl font-bold uppercase text-white">What Riders Are Saying</h2>
-                <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
+                <p className="mt-4 max-w-2xl mx-auto text-gray-300">
                     Real feedback from riders who trust our machines.
                 </p>
             </div>
