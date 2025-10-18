@@ -1,7 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { ProductCard } from "@/components/product-card";
+import { products } from "@/data/products";
+import Link from "next/link";
 
 export default function Home() {
+  const featuredProducts = products.slice(0, 3); // Show first 3 products as featured
+
   return (
     <>
       {/* Hero Section */}
@@ -28,10 +33,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Other sections will go here */}
-      <div className="py-20 text-center">
-        <h2 className="font-heading text-3xl">Featured Collections section coming soon...</h2>
-      </div>
+      {/* Featured Bikes Section */}
+      <section className="py-16 sm:py-24 bg-background">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold uppercase">Featured Bikes</h2>
+            <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
+              Check out our most popular models, built for performance and reliability.
+            </p>
+          </div>
+
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {featuredProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <Button asChild size="lg" variant="outline">
+              <Link href="/collections">
+                View All Collections <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
