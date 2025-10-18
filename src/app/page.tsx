@@ -21,18 +21,21 @@ const collections = [
     href: "/dirt-bike",
     imageSrc: "/placeholders/tfx250-1.webp",
     imageAlt: "A high-performance dirt bike on a trail.",
+    description: "Built for the ultimate off-road experience."
   },
   {
     name: "Pit Bikes",
     href: "/pit-bike",
     imageSrc: "/placeholders/tsx140-1.webp",
     imageAlt: "A compact and agile pit bike.",
+    description: "Delivering big fun in a compact package."
   },
   {
     name: "ATVs",
     href: "/atv",
     imageSrc: "/placeholders/atx125-1.webp",
     imageAlt: "A rugged all-terrain vehicle.",
+    description: "Designed to handle the toughest terrain."
   },
 ];
 
@@ -113,16 +116,19 @@ export default function Home() {
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {collections.map((collection) => (
-              <Link href={collection.href} key={collection.name} className="group relative block h-64 overflow-hidden rounded-2xl">
-                <Image
-                  src={collection.imageSrc}
-                  alt={collection.imageAlt}
-                  fill
-                  className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/50"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
+              <Link href={collection.href} key={collection.name} className="group relative block overflow-hidden rounded-2xl">
+                <div className="aspect-[4/3] bg-bg-dark">
+                  <Image
+                    src={collection.imageSrc}
+                    alt={collection.imageAlt}
+                    fill
+                    className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-6">
                   <h3 className="font-heading text-3xl font-bold text-white uppercase">{collection.name}</h3>
+                  <p className="mt-1 text-sm text-gray-300">{collection.description}</p>
                 </div>
               </Link>
             ))}
