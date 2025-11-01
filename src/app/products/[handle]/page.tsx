@@ -12,12 +12,18 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { RelatedProducts } from "@/components/related-products";
 
-type Props = {
-  params: { handle: string };
+type RouteParams = {
+  handle: string;
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const product = products.find((p) => p.handle === params.handle);
+type AsyncParamsProps = {
+  params: Promise<RouteParams>;
+};
+
+export async function generateMetadata({ params }: AsyncParamsProps): Promise<Metadata> {
+  const { handle } = await params;
+
+  const product = products.find((p) => p.handle === handle);
 
   if (!product) {
     return {
@@ -44,8 +50,10 @@ const familyToPath = {
     'part': { label: 'Parts', href: '/parts' },
 }
 
-export default function ProductPage({ params }: { params: { handle: string } }) {
-  const product = products.find((p) => p.handle === params.handle);
+export default async function ProductPage({ params }: AsyncParamsProps) {
+  const { handle } = await params;
+
+  const product = products.find((p) => p.handle === handle);
 
   if (!product) {
     notFound();

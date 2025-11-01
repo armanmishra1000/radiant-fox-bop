@@ -2,12 +2,18 @@ import { notFound } from "next/navigation";
 import { legalPages } from "@/data/legal";
 import type { Metadata } from "next";
 
-type Props = {
-  params: { slug: string };
+type RouteParams = {
+  slug: string;
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const page = legalPages.find((p) => p.slug === params.slug);
+type AsyncParamsProps = {
+  params: Promise<RouteParams>;
+};
+
+export async function generateMetadata({ params }: AsyncParamsProps): Promise<Metadata> {
+  const { slug } = await params;
+
+  const page = legalPages.find((p) => p.slug === slug);
 
   if (!page) {
     return {
@@ -20,8 +26,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function LegalPage({ params }: { params: { slug: string } }) {
-  const page = legalPages.find((p) => p.slug === params.slug);
+export default async function LegalPage({ params }: AsyncParamsProps) {
+  const { slug } = await params;
+
+  const page = legalPages.find((p) => p.slug === slug);
 
   if (!page) {
     notFound();

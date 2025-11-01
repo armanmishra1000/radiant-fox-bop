@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { FinancingCalculator } from "@/components/financing-calculator";
 import type { Metadata } from "next";
 
@@ -19,7 +20,9 @@ export default function FinancingPage() {
       </div>
 
       <div className="mt-16 max-w-5xl mx-auto">
-        <FinancingCalculator />
+        <Suspense fallback={null}>
+          <FinancingCalculator />
+        </Suspense>
       </div>
     </div>
   );
