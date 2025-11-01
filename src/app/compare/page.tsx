@@ -89,10 +89,10 @@ export default function ComparePage() {
           </TableHeader>
           <TableBody>
             <TableRow>
-              <TableCell className="font-bold">MSRP</TableCell>
+              <TableCell className="font-bold">Pricing</TableCell>
               {compareItems.map((item) => (
-                <TableCell key={item.id} className="text-center font-bold text-lg text-primary">
-                  {item.msrp ? `₹${item.msrp.toLocaleString("en-IN")}` : "-"}
+                <TableCell key={item.id} className="text-center text-sm text-muted-foreground">
+                  Contact on WhatsApp for pricing
                 </TableCell>
               ))}
             </TableRow>

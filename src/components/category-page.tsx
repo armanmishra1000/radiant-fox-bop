@@ -33,10 +33,10 @@ export function CategoryPage({ title, description, products, breadcrumbs }: Cate
     }
 
     // Apply sorting
-    if (sortOption === "price-asc") {
-      filtered.sort((a, b) => (a.msrp || 0) - (b.msrp || 0));
-    } else if (sortOption === "price-desc") {
-      filtered.sort((a, b) => (b.msrp || 0) - (a.msrp || 0));
+    if (sortOption === "name-asc") {
+      filtered.sort((a, b) => a.title.localeCompare(b.title));
+    } else if (sortOption === "name-desc") {
+      filtered.sort((a, b) => b.title.localeCompare(a.title));
     }
 
     return filtered;

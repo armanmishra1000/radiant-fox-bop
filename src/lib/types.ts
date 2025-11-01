@@ -16,10 +16,8 @@ export type Product = {
   handle: string;
   title: string;
   subtitle?: string;
-  family: 'dirt-bike' | 'pit-bike' | 'atv' | 'part';
-  price?: number;
-  msrp?: number;
-  status?: 'in_stock' | 'dealer_only' | 'sold_out';
+  family: "dirt-bike" | "pit-bike" | "atv" | "part";
+  status?: "in_stock" | "dealer_only" | "sold_out";
   hero: Media;
   gallery: Media[];
   highlights?: string[];

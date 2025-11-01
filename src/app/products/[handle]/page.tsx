@@ -80,9 +80,9 @@ export default function ProductPage({ params }: { params: { handle: string } }) 
           )}
           <h1 className="font-heading text-3xl md:text-4xl font-bold uppercase">{product.title}</h1>
           
-          {product.msrp && (
-            <p className="text-3xl font-bold mt-4">₹{product.msrp.toLocaleString("en-IN")}</p>
-          )}
+          <p className="mt-4 text-muted-foreground">
+            Pricing is available on request. Reach out on WhatsApp and our team will send you a personalized quote.
+          </p>
 
           {product.highlights && (
             <ul className="mt-6 space-y-2 text-muted-foreground">
@@ -103,13 +103,11 @@ export default function ProductPage({ params }: { params: { handle: string } }) 
             >
               Inquire on WhatsApp
             </WhatsappButton>
-            {product.msrp && (
-                <Button asChild size="lg" variant="secondary" className="w-full">
-                    <Link href={`/financing?price=${product.msrp}`}>
-                        <Calculator className="mr-2 h-5 w-5" /> Calculate Financing
-                    </Link>
-                </Button>
-            )}
+            <Button asChild size="lg" variant="secondary" className="w-full">
+              <Link href="/financing">
+                <Calculator className="mr-2 h-5 w-5" /> Estimate Financing
+              </Link>
+            </Button>
             <Button size="lg" variant="outline" className="w-full flex items-center gap-2">
               <Phone className="h-5 w-5" /> Call for Details: 1-800-555-1234
             </Button>

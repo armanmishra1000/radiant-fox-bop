@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import type { Product } from "@/lib/types";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import { WhatsappButton } from "@/components/whatsapp-button";
 
 interface ProductQuickViewProps {
   product: Product | null;
@@ -27,6 +28,7 @@ export function ProductQuickView({ product, open, onOpenChange }: ProductQuickVi
   }
 
   const statusInfo = product.status ? statusMap[product.status] : null;
+  const whatsappMessage = `Hello, I'm interested in the ${product.title}. Can you share the pricing details?`;
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -51,9 +53,13 @@ export function ProductQuickView({ product, open, onOpenChange }: ProductQuickVi
                   {statusInfo.text}
                 </Badge>
               )}
-              {product.msrp && (
-                <p className="text-3xl font-bold">₹{product.msrp.toLocaleString("en-IN")}</p>
-              )}
+              <p className="text-sm text-muted-foreground">Contact us on WhatsApp to receive current pricing and availability.</p>
+              <WhatsappButton
+                message={whatsappMessage}
+                className="mt-3 w-full bg-primary text-primary-foreground"
+              >
+                Chat on WhatsApp
+              </WhatsappButton>
               {product.highlights && (
                 <ul className="mt-4 space-y-2 text-muted-foreground">
                   {product.highlights.slice(0, 3).map((highlight) => (

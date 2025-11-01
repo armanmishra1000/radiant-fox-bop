@@ -20,9 +20,9 @@ import { WhatsappButton } from "@/components/whatsapp-button";
 import { cn } from "@/lib/utils";
 
 const graphicKits = [
-  { id: "standard", name: "Standard Issue", price: 0, preview: "/placeholders/tsx140-1.webp" },
-  { id: "flow", name: "Flow Series", price: 49.99, preview: "/placeholders/tsx140-2.webp" },
-  { id: "velocity", name: "Velocity Series", price: 59.99, preview: "/placeholders/tsx140-3.webp" },
+  { id: "standard", name: "Standard Issue", preview: "/placeholders/tsx140-1.webp" },
+  { id: "flow", name: "Flow Series", preview: "/placeholders/tsx140-2.webp" },
+  { id: "velocity", name: "Velocity Series", preview: "/placeholders/tsx140-3.webp" },
 ];
 
 export default function GraphicsPage() {
@@ -31,9 +31,8 @@ export default function GraphicsPage() {
   const [selectedKitId, setSelectedKitId] = React.useState(graphicKits[0].id);
 
   const selectedKit = graphicKits.find(kit => kit.id === selectedKitId) || graphicKits[0];
-  const totalPrice = selectedKit.price;
 
-  const whatsappMessage = `Hello, I'd like to order a graphics kit with the following details:\n- Kit: ${selectedKit.name}\n- Name: ${name}\n- Number: ${number}`;
+  const whatsappMessage = `Hello, I'd like a quote for the ${selectedKit.name} graphics kit.\n- Name: ${name}\n- Number: ${number}`;
 
   return (
     <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
@@ -141,9 +140,9 @@ export default function GraphicsPage() {
               </div>
             </CardContent>
             <CardFooter className="flex flex-col gap-4">
-                <div className="w-full text-2xl font-bold text-right">
-                    Total: ₹{totalPrice.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                </div>
+                <p className="text-sm text-muted-foreground text-right">
+                    Pricing is provided directly over WhatsApp once we confirm your kit details.
+                </p>
               <WhatsappButton
                 size="lg"
                 message={whatsappMessage}

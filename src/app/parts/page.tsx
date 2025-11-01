@@ -8,6 +8,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { vinRecords, type VinRecord } from "@/data/vin";
 import { parts, type Part } from "@/data/parts";
 import { Search, Download } from "lucide-react";
+import { WhatsappButton } from "@/components/whatsapp-button";
 
 export default function PartsPage() {
   const [vin, setVin] = React.useState("");
@@ -87,7 +88,7 @@ export default function PartsPage() {
                     <TableRow>
                       <TableHead>Part Name</TableHead>
                       <TableHead>SKU</TableHead>
-                      <TableHead className="text-right">Price</TableHead>
+                      <TableHead className="text-right">Pricing</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -95,7 +96,15 @@ export default function PartsPage() {
                       <TableRow key={part.id}>
                         <TableCell className="font-medium">{part.name}</TableCell>
                         <TableCell>{part.sku}</TableCell>
-                        <TableCell className="text-right">₹{part.price.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</TableCell>
+                        <TableCell className="text-right">
+                          <WhatsappButton
+                            size="sm"
+                            className="bg-primary text-primary-foreground"
+                            message={`Hello, I'm looking for pricing on the ${part.name} (${part.sku}). Can you assist?`}
+                          >
+                            Contact for pricing
+                          </WhatsappButton>
+                        </TableCell>
                       </TableRow>
                     ))}
                   </TableBody>

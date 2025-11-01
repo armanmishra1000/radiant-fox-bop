@@ -8,6 +8,7 @@ import { ArrowRight, Eye, PlusCircle, CheckCircle } from "lucide-react";
 import { Button } from "./ui/button";
 import { useCompare } from "@/context/compare-context";
 import { cn } from "@/lib/utils";
+import { WhatsappButton } from "@/components/whatsapp-button";
 
 const statusMap = {
   in_stock: { text: "In Stock", className: "bg-green-600 hover:bg-green-600" },
@@ -24,6 +25,7 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
   const { addToCompare, isInCompare } = useCompare();
   const isAdded = isInCompare(product.id);
   const statusInfo = product.status ? statusMap[product.status] : null;
+  const whatsappMessage = `Hello, I'm interested in the ${product.title}. Can you share the pricing details?`;
 
   return (
     <article className="group relative flex flex-col rounded-2xl bg-card shadow-card overflow-hidden transition-transform duration-300 hover:-translate-y-1">
@@ -73,15 +75,23 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
         <h3 className="font-heading text-lg font-bold text-foreground uppercase">{product.title}</h3>
         {product.engine_cc && <p className="text-sm text-muted-foreground">{product.engine_cc}cc</p>}
         <div className="mt-auto pt-4">
-          <div className="flex items-center justify-between pt-4 border-t border-border/20">
-              {product.msrp ? (
-              <span className="text-xl font-bold text-foreground">₹{product.msrp.toLocaleString("en-IN")}</span>
-              ) : (
-              <span className="text-lg font-medium text-foreground">Request Quote</span>
-              )}
-              <Link href={`/products/${product.handle}`} className="inline-flex items-center rounded-full bg-primary px-4 py-1.5 text-sm font-bold text-primary-foreground">
+          <div className="flex flex-col gap-3 pt-4 border-t border-border/20">
+            <p className="text-sm text-muted-foreground">Contact us on WhatsApp to get personalized pricing.</p>
+            <div className="flex flex-col sm:flex-row gap-2">
+              <WhatsappButton
+                message={whatsappMessage}
+                size="sm"
+                className="justify-center bg-primary text-primary-foreground"
+              >
+                Chat on WhatsApp
+              </WhatsappButton>
+              <Link
+                href={`/products/${product.handle}`}
+                className="inline-flex items-center justify-center rounded-full bg-background px-4 py-1.5 text-sm font-bold text-foreground border border-border/40 hover:bg-foreground hover:text-background transition-colors"
+              >
                 View <ArrowRight className="ml-1 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
+            </div>
           </div>
         </div>
       </div>
