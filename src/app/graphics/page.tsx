@@ -142,7 +142,7 @@ export default function GraphicsPage() {
             </CardContent>
             <CardFooter className="flex flex-col gap-4">
                 <div className="w-full text-2xl font-bold text-right">
-                    Total: ${totalPrice.toFixed(2)}
+                    Total: ₹{totalPrice.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                 </div>
               <WhatsappButton
                 size="lg"

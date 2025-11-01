@@ -4,7 +4,7 @@ import { CheckCircle } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us | Thumpstar Demo",
+  title: "About Us | Gapuchee Demo",
   description: "Learn about our passion for powersports and our commitment to quality and performance.",
 };
 
@@ -44,10 +44,10 @@ export default function AboutPage() {
           <div>
             <h2 className="font-heading text-3xl font-bold uppercase">Our Story</h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Founded by a group of lifelong riders and mechanics, Thumpstar Demo was born from a simple idea: to build high-quality, performance-oriented powersports machines that don't break the bank. We were tired of seeing fellow enthusiasts compromise between quality and affordability. So, we set out to change that.
+              Founded by a group of lifelong riders and mechanics, Gapuchee Demo was born from a simple idea: to build high-quality, performance-oriented powersports machines that don’t break the bank. We were tired of seeing fellow enthusiasts compromise between quality and affordability. So, we set out to change that.
             </p>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              From our humble beginnings in a small workshop, we've grown into a trusted name in the community, known for our durable bikes, innovative features like the Tri-Bar chassis, and a commitment to supporting the riders who use our products.
+              From our humble beginnings in a small workshop, we’ve grown into a trusted name in the community, known for our durable bikes, innovative features like the Tri-Bar chassis, and a commitment to supporting the riders who use our products.
             </p>
           </div>
           
@@ -67,7 +67,7 @@ export default function AboutPage() {
             <div className="text-center max-w-3xl mx-auto">
                 <h2 className="font-heading text-3xl font-bold uppercase">Our Mission</h2>
                 <p className="mt-4 text-muted-foreground leading-relaxed text-lg">
-                    To empower riders of all levels with reliable, high-performance machines that fuel their passion for adventure and push the boundaries of what's possible on two or four wheels.
+                    To empower riders of all levels with reliable, high-performance machines that fuel their passion for adventure and push the boundaries of what’s possible on two or four wheels.
                 </p>
             </div>
             <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -4,7 +4,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Thumpstar Demo",
+  title: "Contact Us | Gapuchee Demo",
   description: "Get in touch with our sales, service, or parts departments via WhatsApp.",
 };
 
@@ -16,7 +16,7 @@ export default function ContactPage() {
           Contact Us
         </h1>
         <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
-          Have a question? We're here to help. The best way to reach us is via WhatsApp.
+          Have a question? We’re here to help. The best way to reach us is via WhatsApp.
         </p>
       </div>
 
@@ -31,7 +31,7 @@ export default function ContactPage() {
               <div className="flex items-start gap-4">
                 <MapPin className="h-6 w-6 text-primary mt-1" />
                 <div>
-                  <p className="font-semibold">Thumpstar Demo Dealer</p>
+                  <p className="font-semibold">Gapuchee Demo Dealer</p>
                   <p className="text-muted-foreground">123 Powersports Lane<br />Motocross City, USA 54321</p>
                 </div>
               </div>
@@ -46,7 +46,7 @@ export default function ContactPage() {
                 <Mail className="h-6 w-6 text-primary mt-1" />
                 <div>
                   <p className="font-semibold">Email</p>
-                  <a href="mailto:sales@thumpstardemo.com" className="text-muted-foreground hover:text-primary">sales@thumpstardemo.com</a>
+                  <a href="mailto:sales@gapucheedemo.com" className="text-muted-foreground hover:text-primary">sales@gapucheedemo.com</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">

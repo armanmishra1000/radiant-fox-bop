@@ -95,7 +95,7 @@ export default function PartsPage() {
                       <TableRow key={part.id}>
                         <TableCell className="font-medium">{part.name}</TableCell>
                         <TableCell>{part.sku}</TableCell>
-                        <TableCell className="text-right">${part.price.toFixed(2)}</TableCell>
+                        <TableCell className="text-right">₹{part.price.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>

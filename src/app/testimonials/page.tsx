@@ -45,7 +45,7 @@ export default function TestimonialsPage() {
             <DialogHeader>
               <DialogTitle>Share Your Feedback</DialogTitle>
               <DialogDescription>
-                We'd love to hear about your experience. Fill out the form below to submit your testimonial.
+                We’d love to hear about your experience. Fill out the form below to submit your testimonial.
               </DialogDescription>
             </DialogHeader>
             <TestimonialForm setOpen={setOpen} />

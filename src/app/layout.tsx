@@ -19,7 +19,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Thumpstar Demo",
+  title: "Gapuchee Demo",
   description: "Powersports demo site built with Next.js",
 };
 

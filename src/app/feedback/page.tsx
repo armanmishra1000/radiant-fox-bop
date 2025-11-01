@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Feedback | Thumpstar Demo",
+  title: "Feedback | Gapuchee Demo",
   description: "Share your feedback to help us improve our products and services.",
 };
 
@@ -15,7 +15,7 @@ export default function FeedbackPage() {
           Share Your Feedback
         </h1>
         <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
-          We value your opinion. Whether you have a suggestion, a bug to report, or general feedback, we'd love to hear from you.
+          We value your opinion. Whether you have a suggestion, a bug to report, or general feedback, we’d love to hear from you.
         </p>
       </div>
 
@@ -24,7 +24,7 @@ export default function FeedbackPage() {
           <CardHeader>
             <CardTitle>Feedback Form</CardTitle>
             <CardDescription>
-              Please fill out the form below and we'll get back to you if necessary.
+              Please fill out the form below and we’ll get back to you if necessary.
             </CardDescription>
           </CardHeader>
           <CardContent>

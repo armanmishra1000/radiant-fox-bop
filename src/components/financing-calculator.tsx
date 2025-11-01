@@ -23,7 +23,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
 const formSchema = z.object({
-  vehiclePrice: z.coerce.number().min(500, "Price must be at least $500"),
+  vehiclePrice: z.coerce.number().min(500, "Price must be at least ₹500"),
   downPayment: z.coerce.number().min(0, "Down payment cannot be negative"),
   interestRate: z.coerce.number().min(0, "Rate cannot be negative").max(30, "Rate seems too high"),
   loanTerm: z.coerce.number().min(12, "Term must be at least 12 months").max(84, "Term cannot exceed 84 months"),
@@ -95,9 +95,9 @@ export function FinancingCalculator() {
   }
 
   const formatCurrency = (value: number) => {
-    return new Intl.NumberFormat("en-US", {
+    return new Intl.NumberFormat("en-IN", {
       style: "currency",
-      currency: "USD",
+      currency: "INR",
     }).format(value);
   };
 
@@ -115,7 +115,7 @@ export function FinancingCalculator() {
                 name="vehiclePrice"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Vehicle Price ($)</FormLabel>
+                    <FormLabel>Vehicle Price (₹)</FormLabel>
                     <FormControl>
                       <Input type="number" {...field} />
                     </FormControl>
@@ -128,7 +128,7 @@ export function FinancingCalculator() {
                 name="downPayment"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Down Payment ($)</FormLabel>
+                    <FormLabel>Down Payment (₹)</FormLabel>
                     <FormControl>
                       <Input type="number" {...field} />
                     </FormControl>
@@ -185,7 +185,7 @@ export function FinancingCalculator() {
           </CardHeader>
           <CardContent>
             <p className="text-4xl font-bold text-primary">
-              {result ? formatCurrency(result.monthlyPayment) : "$0.00"}
+              {result ? formatCurrency(result.monthlyPayment) : "₹0.00"}
             </p>
           </CardContent>
         </Card>
@@ -200,11 +200,11 @@ export function FinancingCalculator() {
             </div>
             <div className="flex justify-between">
               <span className="text-muted-foreground">Total Interest Paid</span>
-              <span>{result ? formatCurrency(result.totalInterest) : "$0.00"}</span>
+              <span>{result ? formatCurrency(result.totalInterest) : "₹0.00"}</span>
             </div>
             <div className="flex justify-between font-bold">
               <span className="text-foreground">Total Amount Paid</span>
-              <span>{result ? formatCurrency(result.totalAmountPaid) : "$0.00"}</span>
+              <span>{result ? formatCurrency(result.totalAmountPaid) : "₹0.00"}</span>
             </div>
           </CardContent>
         </Card>

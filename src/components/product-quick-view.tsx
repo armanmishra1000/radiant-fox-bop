@@ -52,7 +52,7 @@ export function ProductQuickView({ product, open, onOpenChange }: ProductQuickVi
                 </Badge>
               )}
               {product.msrp && (
-                <p className="text-3xl font-bold">${product.msrp.toLocaleString()}</p>
+                <p className="text-3xl font-bold">₹{product.msrp.toLocaleString("en-IN")}</p>
               )}
               {product.highlights && (
                 <ul className="mt-4 space-y-2 text-muted-foreground">

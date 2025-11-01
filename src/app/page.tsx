@@ -26,22 +26,23 @@ const collections = [
   {
     name: "Dirt Bikes",
     href: "/dirt-bike",
-    imageSrc: "/placeholders/tfx250-1.webp",
-    imageAlt: "A high-performance dirt bike on a trail.",
+    imageSrc: "/Dirt%20Bike%20Lock%20Screen.jpeg",
+    imageAlt: "High-performance dirt bike cutting through a dusty trail at golden hour.",
     description: "Built for the ultimate off-road experience."
   },
   {
     name: "Pit Bikes",
     href: "/pit-bike",
-    imageSrc: "/placeholders/tsx140-1.webp",
-    imageAlt: "A compact and agile pit bike.",
+    imageSrc: "/pit_bike_wkx_racing_une-1.webp",
+    imageAlt: "Gapuchee WKX pit bike parked on a track.",
     description: "Delivering big fun in a compact package."
   },
   {
     name: "ATVs",
     href: "/atv",
-    imageSrc: "/placeholders/atx125-1.webp",
-    imageAlt: "A rugged all-terrain vehicle.",
+    imageSrc: "/b03b2ca1e0f6233c4b6bd1ca026b6578.jpg",
+    imageAlt: "Gapuchee ATV racing through a wooded trail.",
+    imagePosition: "center",
     description: "Designed to handle the toughest terrain."
   },
 ];
@@ -67,7 +68,7 @@ const highlights = [
 export default function Home() {
   const [quickViewProduct, setQuickViewProduct] = React.useState<Product | null>(null);
   const featuredProducts = products.slice(0, 4);
-  const featuredGalleryImages = galleryImages.slice(0, 4);
+  const featuredGalleryImages = galleryImages.slice(0, 3);
 
   return (
     <>
@@ -84,13 +85,14 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-[75vh] min-h-[500px] w-full bg-bg-dark text-white flex items-center justify-center text-center overflow-hidden">
         <Image
-          src="/placeholders/gallery/gallery-1.webp"
-          alt="Rider on a dirt bike kicking up dust"
+          src="/hero-background.webp"
+          alt="Motocross rider powering through rugged terrain at golden hour"
           fill
+          sizes="100vw"
           className="object-cover animate-kenburns"
           priority
         />
-        <div className="absolute inset-0 bg-black/60 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-bg-dark/60 to-transparent z-10"></div>
         <div className="container relative z-20 max-w-4xl px-4 sm:px-6 lg:px-8">
           <h1 className="font-heading text-4xl md:text-6xl font-bold uppercase tracking-wider animate-in fade-in slide-in-from-bottom-12 duration-1000">
             Engineered for the Dirt
@@ -148,6 +150,7 @@ export default function Home() {
                       alt={collection.imageAlt}
                       fill
                       className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                      style={{ objectPosition: collection.imagePosition ?? "center" }}
                     />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
@@ -250,7 +253,7 @@ export default function Home() {
               Capturing the adventure, one ride at a time.
             </p>
           </AnimateOnScroll>
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {featuredGalleryImages.map((image, index) => (
               <AnimateOnScroll key={image.id} delay={index * 100}>
                 <Link href="/gallery" className="group aspect-square relative overflow-hidden rounded-2xl block">
@@ -259,7 +262,7 @@ export default function Home() {
                     alt={image.alt}
                     fill
                     className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
-                    sizes="(max-width: 768px) 50vw, 25vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent transition-opacity duration-300"></div>
                   <div className="absolute bottom-0 left-0 p-4 text-white opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">

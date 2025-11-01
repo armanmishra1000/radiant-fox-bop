@@ -3,7 +3,7 @@ import { products } from "@/data/products";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Dirt Bikes | Thumpstar Demo",
+  title: "Dirt Bikes | Gapuchee Demo",
   description: "Explore our collection of high-performance dirt bikes.",
 };
 

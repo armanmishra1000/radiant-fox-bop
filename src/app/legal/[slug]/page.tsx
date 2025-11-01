@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${page.title} | Thumpstar Demo`,
+    title: `${page.title} | Gapuchee Demo`,
   };
 }
 

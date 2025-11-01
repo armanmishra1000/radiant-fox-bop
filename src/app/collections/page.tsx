@@ -3,7 +3,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Collections | Thumpstar Demo",
+  title: "Collections | Gapuchee Demo",
   description: "Explore our collections of Dirt Bikes, Pit Bikes, ATVs, and Parts.",
 };
 

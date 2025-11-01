@@ -9,7 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "FAQ | Thumpstar Demo",
+  title: "FAQ | Gapuchee Demo",
   description: "Frequently asked questions about orders, parts, assembly, and maintenance.",
 };
 

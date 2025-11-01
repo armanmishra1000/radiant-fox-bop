@@ -27,7 +27,7 @@ export function SearchResults() {
 
   const breadcrumbs = [
     { label: "Home", href: "/" },
-    { label: `Search for "${query}"` },
+    { label: `Search for “${query}”` },
   ];
 
   return (
@@ -46,7 +46,7 @@ export function SearchResults() {
             Search Results
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
-            {results.length} result{results.length !== 1 ? 's' : ''} found for "{query}"
+            {results.length} result{results.length !== 1 ? 's' : ''} found for “{query}”
           </p>
         </div>
 
@@ -62,7 +62,7 @@ export function SearchResults() {
               <Search className="mx-auto h-12 w-12 text-muted-foreground" />
               <h3 className="mt-4 text-lg font-semibold">No products found</h3>
               <p className="text-muted-foreground mt-2">
-                We couldn't find anything matching your search. Try a different keyword.
+                We couldn’t find anything matching your search. Try a different keyword.
               </p>
             </div>
           )}

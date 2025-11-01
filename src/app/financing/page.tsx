@@ -2,7 +2,7 @@ import { FinancingCalculator } from "@/components/financing-calculator";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Financing Calculator | Thumpstar Demo",
+  title: "Financing Calculator | Gapuchee Demo",
   description: "Estimate your monthly payments for a new bike or ATV.",
 };
 

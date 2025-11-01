@@ -3,7 +3,7 @@ import { products } from "@/data/products";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Pit Bikes | Thumpstar Demo",
+  title: "Pit Bikes | Gapuchee Demo",
   description: "Discover our range of fun and agile pit bikes.",
 };
 

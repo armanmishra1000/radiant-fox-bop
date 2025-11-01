@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${product.title} | Thumpstar Demo`,
+    title: `${product.title} | Gapuchee Demo`,
     description: `Details and specifications for the ${product.title}.`,
   };
 }
@@ -81,7 +81,7 @@ export default function ProductPage({ params }: { params: { handle: string } }) 
           <h1 className="font-heading text-3xl md:text-4xl font-bold uppercase">{product.title}</h1>
           
           {product.msrp && (
-            <p className="text-3xl font-bold mt-4">${product.msrp.toLocaleString()}</p>
+            <p className="text-3xl font-bold mt-4">₹{product.msrp.toLocaleString("en-IN")}</p>
           )}
 
           {product.highlights && (

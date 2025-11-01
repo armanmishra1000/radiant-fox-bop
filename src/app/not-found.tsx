@@ -11,7 +11,7 @@ export default function NotFound() {
           404 - Page Not Found
         </h1>
         <p className="mt-4 max-w-xl mx-auto text-muted-foreground">
-          Oops! The page you're looking for doesn't exist. It might have been moved or deleted.
+          Oops! The page you’re looking for doesn’t exist. It might have been moved or deleted.
         </p>
         <Button asChild size="lg" className="mt-8 bg-primary text-primary-foreground">
           <Link href="/">

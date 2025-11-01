@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { SearchResults } from "@/components/search-results";
 
 export const metadata: Metadata = {
-  title: "Search Results | Thumpstar Demo",
+  title: "Search Results | Gapuchee Demo",
   description: "Find the perfect bike, ATV, or part.",
 };
 

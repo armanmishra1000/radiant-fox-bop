@@ -92,7 +92,7 @@ export default function ComparePage() {
               <TableCell className="font-bold">MSRP</TableCell>
               {compareItems.map((item) => (
                 <TableCell key={item.id} className="text-center font-bold text-lg text-primary">
-                  {item.msrp ? `$${item.msrp.toLocaleString()}` : "-"}
+                  {item.msrp ? `₹${item.msrp.toLocaleString("en-IN")}` : "-"}
                 </TableCell>
               ))}
             </TableRow>

@@ -20,19 +20,19 @@ const bikeCategories = [
     title: "Dirt Bikes",
     href: "/dirt-bike",
     description: "High-performance bikes for the trail and track.",
-    image: "/placeholders/tfx250-1.webp",
+    image: "/Dirt%20Bike%20Lock%20Screen.jpeg",
   },
   {
     title: "Pit Bikes",
     href: "/pit-bike",
     description: "Compact fun for the backyard and beyond.",
-    image: "/placeholders/tsx140-1.webp",
+    image: "/pit_bike_wkx_racing_une-1.webp",
   },
   {
     title: "ATVs",
     href: "/atv",
     description: "Rugged machines for work and play.",
-    image: "/placeholders/atx125-1.webp",
+    image: "/b03b2ca1e0f6233c4b6bd1ca026b6578.jpg",
   },
 ];
 

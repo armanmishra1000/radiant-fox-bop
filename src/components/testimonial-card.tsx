@@ -21,7 +21,7 @@ export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
       </CardHeader>
       <CardContent className="flex-grow">
         <blockquote className="italic text-foreground">
-          "{testimonial.quote}"
+          “{testimonial.quote}”
         </blockquote>
       </CardContent>
       <CardFooter className="flex items-center justify-between">

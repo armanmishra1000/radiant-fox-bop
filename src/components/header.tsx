@@ -38,9 +38,9 @@ export function Header() {
               <Phone size={16} />
               <span className="hidden sm:inline">1-800-555-1234</span>
             </a>
-            <a href="mailto:sales@thumpstardemo.com" className="flex items-center gap-2 hover:text-primary">
+            <a href="mailto:sales@gapucheedemo.com" className="flex items-center gap-2 hover:text-primary">
               <Mail size={16} />
-              <span className="hidden sm:inline">sales@thumpstardemo.com</span>
+              <span className="hidden sm:inline">sales@gapucheedemo.com</span>
             </a>
           </div>
           <div>
@@ -53,7 +53,7 @@ export function Header() {
       <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-6">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-heading text-2xl font-bold uppercase">Thumpstar</span>
+            <span className="font-heading text-2xl font-bold uppercase">Gapuchee</span>
           </Link>
           <nav className="hidden md:flex">
             <MegaMenu />
@@ -72,7 +72,7 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="right">
               <Link href="/" className="mr-6 flex items-center space-x-2 mb-6">
-                <span className="font-heading text-2xl font-bold uppercase">Thumpstar</span>
+                <span className="font-heading text-2xl font-bold uppercase">Gapuchee</span>
               </Link>
               <nav className="flex flex-col gap-4">
                 {mobileNavLinks.map((link) => (

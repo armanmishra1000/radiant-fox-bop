@@ -5,7 +5,7 @@ import { FileText, Video, Wrench } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Workshop | Thumpstar Demo",
+  title: "Workshop | Gapuchee Demo",
   description: "Assembly guides, servicing tips, and owner's manuals.",
 };
 
