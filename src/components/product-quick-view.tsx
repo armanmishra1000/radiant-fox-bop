@@ -17,7 +17,7 @@ interface ProductQuickViewProps {
 }
 
 const statusMap = {
-  in_stock: { text: "In Stock", className: "bg-green-600 hover:bg-green-600/90" },
+  in_stock: { text: "In Stock", className: "bg-primary hover:bg-primary/90" },
   dealer_only: { text: "Dealer Only", className: "bg-blue-600 hover:bg-blue-600" },
   sold_out: { text: "Sold Out", className: "bg-red-600 hover:bg-red-600" },
 };
@@ -34,7 +34,7 @@ export function ProductQuickView({ product, open, onOpenChange }: ProductQuickVi
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-3xl">
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="bg-background rounded-lg p-4">
+          <div className="bg-bg-dark rounded-lg p-4">
             <Image
               src={product.hero.url}
               alt={product.hero.alt}

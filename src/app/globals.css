@@ -45,19 +45,19 @@
     --card-foreground: 210 40% 98%;
     --popover: 0 0% 8%;
     --popover-foreground: 210 40% 98%;
-    --primary: 74 100% 47%; /* #C6F000 - Chartreuse */
-    --primary-foreground: 74 100% 10%; /* Dark green for contrast */
+    --primary: 220 5% 41%; /* #64676F */
+    --primary-foreground: 210 40% 98%; /* slate-50 */
     --secondary: 0 0% 15%;
     --secondary-foreground: 210 40% 98%;
     --muted: 0 0% 15%;
     --muted-foreground: 215 20% 65%;
-    --accent: 74 100% 47%; /* Match primary */
-    --accent-foreground: 74 100% 10%; /* Match primary-foreground */
+    --accent: 240 3% 89%; /* #E1E1E3 */
+    --accent-foreground: 222 47% 11%; /* slate-900 */
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 74 100% 47%; /* Match primary */
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 220 5% 41%; /* #64676F */
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
@@ -83,13 +83,6 @@
   }
   body {
     @apply bg-background text-foreground;
-  }
-  ::selection {
-    @apply bg-primary/80 text-primary-foreground;
-  }
-  /* Add a subtle transition to all elements */
-  *, *::before, *::after {
-    @apply transition-colors duration-200;
   }
 }
 

@@ -79,7 +79,7 @@ export default function DatabasePage() {
                   <Card key={record.vinPrefix}>
                     <CardContent className="p-4 flex items-center gap-4">
                       {product && (
-                        <div className="w-24 h-24 bg-background rounded-lg p-2 flex-shrink-0">
+                        <div className="w-24 h-24 bg-bg-dark rounded-lg p-2 flex-shrink-0">
                           <Image 
                             src={product.hero.url}
                             alt={product.hero.alt}
