@@ -297,6 +297,7 @@ export default function Home() {
                 size="lg"
                 variant="secondary"
                 message="Hello! I have a question and would like to chat."
+                className="animate-pulse-bright"
               >
                 Chat on WhatsApp
               </WhatsappButton>

@@ -107,7 +107,7 @@ export default async function ProductPage({ params }: AsyncParamsProps) {
             <WhatsappButton
               size="lg"
               message={whatsappMessage}
-              className="bg-primary text-primary-foreground w-full"
+              className="bg-primary text-primary-foreground w-full animate-pulse-bright"
             >
               Inquire on WhatsApp
             </WhatsappButton>
