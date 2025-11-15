@@ -141,31 +141,29 @@ export default function Home() {
       <section className="py-16 sm:py-24 bg-bg-dark text-white">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {collections.map((collection, index) => (
-              <AnimateOnScroll key={collection.name} delay={index * 150}>
-                <Link href={collection.href} className="group relative block overflow-hidden rounded-2xl">
-                  <div className="aspect-[4/3] bg-bg-dark">
-                    <Image
-                      src={collection.imageSrc}
-                      alt={collection.imageAlt}
-                      fill
-                      className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
-                      style={{ objectPosition: collection.imagePosition ?? "center" }}
-                    />
+            {collections.map((collection) => (
+              <Link key={collection.name} href={collection.href} className="group relative block overflow-hidden rounded-2xl">
+                <div className="aspect-[4/3] bg-bg-dark">
+                  <Image
+                    src={collection.imageSrc}
+                    alt={collection.imageAlt}
+                    fill
+                    className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                    style={{ objectPosition: collection.imagePosition ?? "center" }}
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-6 w-full">
+                  <h3 className="font-heading text-3xl font-bold text-white uppercase transition-transform duration-300 group-hover:-translate-y-10">{collection.name}</h3>
+                  <div className="transition-all duration-300 opacity-0 group-hover:opacity-100 -translate-y-4 group-hover:-translate-y-10">
+                      <p className="mt-1 text-sm text-gray-300">{collection.description}</p>
+                      <div className="mt-2 flex items-center text-primary font-bold text-sm">
+                          <span>View Collection</span>
+                          <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                      </div>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 p-6 w-full">
-                    <h3 className="font-heading text-3xl font-bold text-white uppercase transition-transform duration-300 group-hover:-translate-y-10">{collection.name}</h3>
-                    <div className="transition-all duration-300 opacity-0 group-hover:opacity-100 -translate-y-4 group-hover:-translate-y-10">
-                        <p className="mt-1 text-sm text-gray-300">{collection.description}</p>
-                        <div className="mt-2 flex items-center text-primary font-bold text-sm">
-                            <span>View Collection</span>
-                            <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                        </div>
-                    </div>
-                  </div>
-                </Link>
-              </AnimateOnScroll>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -254,22 +252,20 @@ export default function Home() {
             </p>
           </AnimateOnScroll>
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {featuredGalleryImages.map((image, index) => (
-              <AnimateOnScroll key={image.id} delay={index * 100}>
-                <Link href="/gallery" className="group aspect-square relative overflow-hidden rounded-2xl block">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent transition-opacity duration-300"></div>
-                  <div className="absolute bottom-0 left-0 p-4 text-white opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                      <p className="font-bold text-sm line-clamp-2">{image.alt}</p>
-                  </div>
-                </Link>
-              </AnimateOnScroll>
+            {featuredGalleryImages.map((image) => (
+              <Link key={image.id} href="/gallery" className="group aspect-square relative overflow-hidden rounded-2xl block">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-0 p-4 text-white opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <p className="font-bold text-sm line-clamp-2">{image.alt}</p>
+                </div>
+              </Link>
             ))}
           </div>
           <AnimateOnScroll className="mt-12 text-center">
