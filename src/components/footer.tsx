@@ -1,10 +1,16 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Facebook, Instagram, Youtube } from "lucide-react";
 
 export function Footer() {
   return (
     <footer className="bg-bg-dark text-white">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+        <div className="mb-8">
+          <Link href="/">
+            <Image src="/gapuchee-logo.png" alt="Gapuchee Logo" width={180} height={36} className="h-9 w-auto" />
+          </Link>
+        </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div>
             <h3 className="font-heading text-lg uppercase">Products</h3>
@@ -45,7 +51,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Gapuchee Demo. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} All Rights Reserved.</p>
         </div>
       </div>
     </footer>
