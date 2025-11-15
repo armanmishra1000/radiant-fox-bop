@@ -103,15 +103,17 @@
 
 > Neutral, industrial aesthetic with a **neon chartreuse accent** (à la off-road brand) on black/gray. WCAG AA contrast.
 
-### Colors
+### Colors (via CSS Variables)
 
-* **Primary/Accent:** `--color-accent: #C6F000` (chartreuse/fluoro lime)
-* **Primary Hover:** `#B3DB00`
-* **Text:** `#111111`
-* **Subtext:** `#4B4B4B`
-* **BG:** `#0A0A0A` (hero/sections), `#FFFFFF` (content)
-* **Border:** `#E5E7EB`
-* **Success/Info/Warning/Error:** Tailwind defaults or theme shades
+The theme is controlled by CSS variables defined in `src/app/globals.css`. The primary brand color is a neon chartreuse.
+
+*   **Primary/Accent (`--primary`):** `hsl(74, 100%, 47%)` (`#C6F000`)
+*   **Primary Foreground (`--primary-foreground`):** `hsl(0, 0%, 7%)` (`#111111`)
+*   **Dark Background (`--background` in dark mode):** `hsl(0, 0%, 4%)` (`#0A0A0A`)
+*   **Dark Card BG (`--card` in dark mode):** `hsl(0, 0%, 8%)`
+*   **Light Background (`--background` in light mode):** `hsl(0, 0%, 100%)` (`#FFFFFF`)
+*   **Text (`--foreground`):** Dark gray for light mode, light gray for dark mode.
+*   **Borders (`--border`):** Light gray for light mode, dark gray for dark mode.
 
 ### Typography
 
@@ -130,29 +132,6 @@
 ### Components Library
 
 * Header/MegaNav, Footer, Breadcrumbs, Button (solid/ghost), Card, Tag/Pill, Badge, Accordion/Tabs, Drawer, Modal/Lightbox, Gallery/Grid, ProductCard, SpecTable, FilterBar, Pagination, TestimonialCard, Form (Field, Validation), Toast, Skeletons, EmptyState.
-
-### Tailwind config (extract)
-
-```js
-// tailwind.config.js
-module.exports = {
-  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
-  theme: {
-    extend: {
-      colors: {
-        accent: {
-          DEFAULT: "#C6F000",
-          600: "#B3DB00",
-          700: "#9AC600",
-        },
-        bg: { dark: "#0A0A0A" },
-      },
-      borderRadius: { xl: "1.25rem", '2xl': '1.5rem' },
-      boxShadow: { card: "0 10px 24px rgba(0,0,0,.15)" },
-    },
-  },
-};
-```
 
 ---
 
