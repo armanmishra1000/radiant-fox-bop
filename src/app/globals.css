@@ -99,17 +99,24 @@
     animation: kenburns 30s ease-in-out infinite alternate;
   }
 
-  @keyframes pulse-bright {
-    0%,
-    100% {
-      box-shadow: 0 0 0 0 hsl(var(--primary) / 0.7);
-    }
-    50% {
-      box-shadow: 0 0 0 10px hsl(var(--primary) / 0);
-    }
+  @keyframes shine {
+    0% { transform: translateX(-100%) skewX(-20deg); }
+    100% { transform: translateX(200%) skewX(-20deg); }
   }
-  .animate-pulse-bright {
-    animation: pulse-bright 2.5s infinite;
+  .animate-shine {
+      position: relative;
+      overflow: hidden;
+  }
+  .animate-shine::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, hsl(var(--primary-foreground) / 0.1), transparent);
+      animation: shine 4s infinite;
+      animation-delay: 1.5s;
   }
 
   .bg-dot-pattern {

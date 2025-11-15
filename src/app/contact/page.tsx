@@ -70,7 +70,7 @@ export default function ContactPage() {
               <WhatsappButton
                 size="lg"
                 message="Hello, I have a sales question."
-                className="w-full bg-primary text-primary-foreground animate-pulse-bright"
+                className="w-full bg-primary text-primary-foreground animate-shine"
               >
                 Contact Sales
               </WhatsappButton>

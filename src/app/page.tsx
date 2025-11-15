@@ -101,7 +101,7 @@ export default function Home() {
             Discover our range of high-performance dirt bikes, pit bikes, and ATVs built to conquer any terrain.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-400">
-            <Button asChild size="lg" className="bg-primary text-primary-foreground animate-pulse-bright">
+            <Button asChild size="lg" className="bg-primary text-primary-foreground animate-shine">
               <Link href="/collections">
                 Explore Bikes <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
@@ -297,7 +297,7 @@ export default function Home() {
                 size="lg"
                 variant="secondary"
                 message="Hello! I have a question and would like to chat."
-                className="animate-pulse-bright"
+                className="animate-shine"
               >
                 Chat on WhatsApp
               </WhatsappButton>
