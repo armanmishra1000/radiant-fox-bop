@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 import { WhatsappButton } from "@/components/whatsapp-button";
 
 const statusMap = {
-  in_stock: { text: "In Stock", className: "bg-primary hover:bg-primary/90" },
+  in_stock: { text: "In Stock", className: "bg-green-600 hover:bg-green-600/90" },
   dealer_only: { text: "Dealer Only", className: "bg-blue-600 hover:bg-blue-600" },
   sold_out: { text: "Sold Out", className: "bg-red-600 hover:bg-red-600" },
 };
@@ -37,7 +37,7 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
       
       <div className="relative">
         <Link href={`/products/${product.handle}`} className="block">
-            <div className="aspect-[4/3] bg-bg-dark p-4">
+            <div className="aspect-[4/3] bg-background p-4">
             <Image
                 src={product.hero.url}
                 alt={product.hero.alt}

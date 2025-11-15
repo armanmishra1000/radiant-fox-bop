@@ -83,7 +83,7 @@ export default function Home() {
       />
 
       {/* Hero Section */}
-      <section className="relative h-[75vh] min-h-[500px] w-full bg-bg-dark text-white flex items-center justify-center text-center overflow-hidden">
+      <section className="relative h-[75vh] min-h-[500px] w-full bg-background text-white flex items-center justify-center text-center overflow-hidden">
         <Image
           src="/hero-background.webp"
           alt="Motocross rider powering through rugged terrain at golden hour"
@@ -92,7 +92,7 @@ export default function Home() {
           className="object-cover animate-kenburns"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-bg-dark/60 to-transparent z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-background/60 to-transparent z-10"></div>
         <div className="container relative z-20 max-w-4xl px-4 sm:px-6 lg:px-8">
           <h1 className="font-heading text-4xl md:text-6xl font-bold uppercase tracking-wider animate-in fade-in slide-in-from-bottom-12 duration-1000">
             Engineered for the Dirt
@@ -138,12 +138,12 @@ export default function Home() {
       </section>
 
       {/* Featured Collections Section */}
-      <section className="py-16 sm:py-24 bg-bg-dark text-white">
+      <section className="py-16 sm:py-24 bg-background text-white">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {collections.map((collection) => (
               <Link key={collection.name} href={collection.href} className="group relative block overflow-hidden rounded-2xl">
-                <div className="aspect-[4/3] bg-bg-dark">
+                <div className="aspect-[4/3] bg-background">
                   <Image
                     src={collection.imageSrc}
                     alt={collection.imageAlt}
@@ -204,7 +204,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Teaser */}
-      <section className="relative bg-bg-dark">
+      <section className="relative bg-background">
         <div
           className="absolute inset-0 bg-cover bg-fixed bg-center"
           style={{ backgroundImage: "url(/placeholders/gallery/gallery-3.webp)" }}

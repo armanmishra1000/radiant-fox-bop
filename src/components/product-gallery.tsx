@@ -18,7 +18,7 @@ export function ProductGallery({ images }: ProductGalleryProps) {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="aspect-[4/3] bg-bg-dark rounded-2xl p-4 overflow-hidden">
+      <div className="aspect-[4/3] bg-background rounded-2xl p-4 overflow-hidden">
         <Image
           key={selectedImage.url}
           src={selectedImage.url}
@@ -34,7 +34,7 @@ export function ProductGallery({ images }: ProductGalleryProps) {
             key={image.url}
             onClick={() => setSelectedImage(image)}
             className={cn(
-              "aspect-square rounded-lg bg-bg-dark p-1 overflow-hidden transition-all",
+              "aspect-square rounded-lg bg-background p-1 overflow-hidden transition-all",
               "ring-2 ring-transparent hover:ring-primary focus:outline-none focus:ring-primary",
               selectedImage.url === image.url && "ring-primary"
             )}

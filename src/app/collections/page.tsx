@@ -53,7 +53,7 @@ export default function CollectionsPage() {
       <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
         {collectionsData.map((collection) => (
           <Link href={collection.href} key={collection.name} className="group relative block overflow-hidden rounded-2xl">
-            <div className="aspect-[4/3] bg-bg-dark">
+            <div className="aspect-[4/3] bg-background">
               <Image
                 src={collection.imageSrc}
                 alt={collection.imageAlt}

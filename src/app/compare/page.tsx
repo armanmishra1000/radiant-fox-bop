@@ -62,7 +62,7 @@ export default function ComparePage() {
               {compareItems.map((item) => (
                 <TableHead key={item.id} className="w-[250px]">
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-32 h-24 bg-bg-dark rounded-lg p-2 mb-2">
+                    <div className="w-32 h-24 bg-background rounded-lg p-2 mb-2">
                       <Image
                         src={item.hero.url}
                         alt={item.hero.alt}
