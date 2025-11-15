@@ -55,8 +55,8 @@
     --accent-foreground: 222 47% 11%; /* slate-900 */
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
     --ring: 220 5% 41%; /* #64676F */
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
