@@ -54,7 +54,7 @@ export function Header() {
       <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-6">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Image src="/gapuchee-logo.png" alt="Gapuchee Logo" width={150} height={30} className="h-7 w-auto" />
+            <Image src="/gapuchee-logo.png" alt="Gapuchee Logo" width={150} height={30} className="h-10 w-auto" />
           </Link>
           <nav className="hidden md:flex">
             <MegaMenu />
@@ -73,7 +73,7 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="right">
               <Link href="/" className="mr-6 flex items-center space-x-2 mb-6">
-                <Image src="/gapuchee-logo.png" alt="Gapuchee Logo" width={150} height={30} className="h-7 w-auto" />
+                <Image src="/gapuchee-logo.png" alt="Gapuchee Logo" width={150} height={30} className="h-10 w-auto" />
               </Link>
               <nav className="flex flex-col gap-4">
                 {mobileNavLinks.map((link) => (

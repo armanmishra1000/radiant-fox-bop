@@ -8,7 +8,7 @@ export function Footer() {
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
         <div className="mb-8">
           <Link href="/">
-            <Image src="/gapuchee-logo.png" alt="Gapuchee Logo" width={180} height={36} className="h-9 w-auto" />
+            <Image src="/gapuchee-logo.png" alt="Gapuchee Logo" width={180} height={36} className="h-12 w-auto" />
           </Link>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
