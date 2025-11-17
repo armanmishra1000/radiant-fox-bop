@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { Menu, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { SearchDialog } from "./search-dialog";
 import { WhatsAppIcon } from "./icons/whatsapp-icon";
 import { MegaMenu } from "./mega-menu";
+import { SvgLogo } from "./svg-logo";
 
 // Mobile navigation links
 const mobileNavLinks = [
@@ -51,41 +51,29 @@ export function Header() {
       </div>
 
       {/* Main header */}
-      <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-6">
-          <Link href="/" className="mr-6 flex items-center space-x-2 animate-light-shine">
-            <Image 
-              src="/gapuchee-logo.png" 
-              alt="Gapuchee Logo" 
-              width={150} 
-              height={30} 
-              className="h-10 w-auto [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.3))]" 
-            />
+      <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-3 sm:px-4 md:px-6 lg:px-8">
+        <div className="flex items-center gap-3 sm:gap-6">
+          <Link href="/" className="flex items-center space-x-2">
+            <SvgLogo className="h-8 sm:h-10" />
           </Link>
           <nav className="hidden md:flex">
             <MegaMenu />
           </nav>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 sm:gap-2">
           <SearchDialog />
           
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="md:hidden">
-                <Menu className="h-6 w-6" />
+                <Menu className="h-5 w-5 sm:h-6 sm:w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
-              <Link href="/" className="mr-6 flex items-center space-x-2 mb-6 animate-light-shine">
-                <Image 
-                  src="/gapuchee-logo.png" 
-                  alt="Gapuchee Logo" 
-                  width={150} 
-                  height={30} 
-                  className="h-10 w-auto [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.3))]" 
-                />
+              <Link href="/" className="mr-6 flex items-center space-x-2 mb-6">
+                <SvgLogo className="h-10" />
               </Link>
               <nav className="flex flex-col gap-4">
                 {mobileNavLinks.map((link) => (

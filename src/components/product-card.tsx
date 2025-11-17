@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 import { WhatsappButton } from "@/components/whatsapp-button";
 
 const statusMap = {
-  in_stock: { text: "In Stock", className: "bg-primary hover:bg-primary/90" },
+  in_stock: { text: "In Stock", className: "bg-primary hover:bg-primary/90 text-primary-foreground" },
   dealer_only: { text: "Dealer Only", className: "bg-blue-600 hover:bg-blue-600" },
   sold_out: { text: "Sold Out", className: "bg-red-600 hover:bg-red-600" },
 };
@@ -50,14 +50,14 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
         <div className="absolute inset-0 flex items-center justify-center gap-2 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <Button 
                 variant="outline" 
-                className="bg-background/80 hover:bg-background"
+                className="bg-background/80 hover:bg-foreground"
                 onClick={() => onQuickView(product)}
             >
                 <Eye className="mr-2 h-4 w-4" /> Quick View
             </Button>
             <Button
                 variant="outline"
-                className="bg-background/80 hover:bg-background"
+                className="bg-background/80 hover:bg-foreground"
                 onClick={() => addToCompare(product.id)}
                 disabled={isAdded}
             >

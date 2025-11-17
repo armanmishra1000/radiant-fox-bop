@@ -66,13 +66,13 @@ export function SearchDialog() {
       <Button
         variant="outline"
         onClick={() => setOpen(true)}
-        className="flex h-9 w-full items-center justify-between px-3 text-sm text-muted-foreground sm:w-40 md:w-64"
+        className="flex h-9 items-center justify-between px-3 text-sm text-muted-foreground lg:w-64"
       >
         <div className="flex items-center gap-2">
           <SearchIcon className="h-4 w-4" />
-          <span>Search...</span>
+          <span className="hidden lg:inline">Search...</span>
         </div>
-        <kbd className="pointer-events-none hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100 sm:flex">
+        <kbd className="pointer-events-none hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100 lg:flex">
           <span className="text-xs">⌘</span>K
         </kbd>
       </Button>
