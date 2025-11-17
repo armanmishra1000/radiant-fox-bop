@@ -1,10 +1,10 @@
 "use client";
 
 import * as React from "react";
+import { motion, Variants } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { useInitialViewportCheck } from "@/hooks/use-initial-viewport-check";
 
-interface AnimateOnScrollProps extends React.HTMLAttributes<HTMLDivElement> {
+interface AnimateOnScrollProps {
   children: React.ReactNode;
   className?: string;
   animationClassName?: string;
@@ -12,67 +12,52 @@ interface AnimateOnScrollProps extends React.HTMLAttributes<HTMLDivElement> {
   threshold?: number;
 }
 
+// Animation variants for common scroll animations
+const variants: Variants = {
+  hidden: { 
+    opacity: 0,
+    y: 30
+  },
+  visible: { 
+    opacity: 1,
+    y: 0
+  }
+};
+
 export function AnimateOnScroll({
   children,
   className,
-  animationClassName = "animate-in fade-in slide-in-from-bottom-8 duration-700",
+  animationClassName = "",
   delay = 0,
   threshold = 0.1,
   ...props
 }: AnimateOnScrollProps) {
-  const ref = React.useRef<HTMLDivElement>(null);
-  const [isIntersecting, setIntersecting] = React.useState(false);
-  const isInitiallyInView = useInitialViewportCheck(ref);
-
-  React.useLayoutEffect(() => {
-    // If element is already in view, make it visible immediately
-    if (isInitiallyInView) {
-      setIntersecting(true);
-    }
-  }, [isInitiallyInView]);
-
-  React.useEffect(() => {
-    // Only set up observer if element is not already in view
-    if (!isInitiallyInView) {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setIntersecting(true);
-            observer.unobserve(entry.target);
-          }
-        },
-        { threshold }
-      );
-
-      const currentRef = ref.current;
-      if (currentRef) {
-        observer.observe(currentRef);
-      }
-
-      return () => {
-        if (currentRef) {
-          observer.unobserve(currentRef);
-        }
-      };
-    }
-  }, [threshold, isInitiallyInView]);
+  // Convert threshold (0-1) to amount (0-1) for Framer Motion
+  // Default threshold 0.1 means 10% of element needs to be visible
+  const amount = Math.max(0.1, Math.min(1, threshold));
 
   return (
-    <div
-      ref={ref}
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ 
+        once: true, 
+        amount: amount,
+        margin: "-50px 0px -50px 0px" // Start animation 50px before element enters viewport
+      }}
+      transition={{
+        duration: 0.7,
+        delay: delay / 1000, // Convert ms to seconds
+        ease: "easeOut"
+      }}
+      variants={variants}
       className={cn(
-        "opacity-0", // Start hidden
-        (isIntersecting || isInitiallyInView) && `opacity-100 ${animationClassName}`,
+        animationClassName,
         className
       )}
-      style={{ 
-        animationDelay: `${delay}ms`,
-        // Remove animation delay for elements already in view
-        transitionDuration: isInitiallyInView ? '0ms' : undefined
-      }}
       {...props}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }
