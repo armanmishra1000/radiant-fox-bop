@@ -121,10 +121,10 @@ export default function Home() {
       {/* Highlights Banner */}
       <section className="py-16 sm:py-24 bg-background bg-dot-pattern">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 text-center">
                 {highlights.map((highlight, index) => (
                     <AnimateOnScroll key={highlight.title} delay={index * 150}>
-                        <div className="group rounded-2xl p-6 transition-all duration-300 hover:bg-card hover:shadow-card hover:-translate-y-1">
+                        <div className="group rounded-2xl p-4 lg:p-6 transition-all duration-300 hover:bg-card hover:shadow-card hover:-translate-y-1">
                             <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary/20 mx-auto transition-all duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:rotate-6">
                                 <highlight.icon className="h-8 w-8 text-primary transition-colors duration-300 group-hover:text-primary-foreground" />
                             </div>
@@ -140,7 +140,7 @@ export default function Home() {
       {/* Featured Collections Section */}
       <section className="py-16 sm:py-24 bg-bg-dark text-white">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {collections.map((collection) => (
               <Link key={collection.name} href={collection.href} className="group relative block overflow-hidden rounded-2xl">
                 <div className="aspect-[4/3] bg-bg-dark">
@@ -196,8 +196,8 @@ export default function Home() {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="hidden sm:flex" />
-              <CarouselNext className="hidden sm:flex" />
+              <CarouselPrevious className="hidden lg:flex" />
+              <CarouselNext className="hidden lg:flex" />
             </Carousel>
           </AnimateOnScroll>
         </div>
@@ -235,8 +235,8 @@ export default function Home() {
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious className="hidden sm:flex" />
-                <CarouselNext className="hidden sm:flex" />
+                <CarouselPrevious className="hidden lg:flex" />
+                <CarouselNext className="hidden lg:flex" />
               </Carousel>
             </AnimateOnScroll>
         </div>

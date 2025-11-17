@@ -52,9 +52,9 @@ export function Header() {
 
       {/* Main header */}
       <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-3 sm:px-4 md:px-6 lg:px-8">
-        <div className="flex items-center gap-3 sm:gap-6">
+        <div className="flex items-center gap-3 sm:gap-8">
           <Link href="/" className="flex items-center space-x-2">
-            <SvgLogo className="h-8 sm:h-10" />
+            <SvgLogo className="h-10" />
           </Link>
           <nav className="hidden md:flex">
             <MegaMenu />

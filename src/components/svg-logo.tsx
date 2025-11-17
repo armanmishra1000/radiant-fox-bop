@@ -6,7 +6,7 @@ interface SvgLogoProps {
 
 export function SvgLogo({ className }: SvgLogoProps) {
   return (
-    <div className={`${className || ""} [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.5))_drop-shadow(0_0_0_rgba(255,255,255,0.2))_drop-shadow(0_4px_8px_rgba(255,255,255,0.1))]`}>
+    <div className={`${className || ""} drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]`}>
       <Image 
         src="/logo.svg" 
         alt="Gapuchee Logo" 
