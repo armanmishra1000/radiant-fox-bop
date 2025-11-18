@@ -279,7 +279,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-primary">
+      <section className="bg-primary-gradient">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 text-center">
           <AnimateOnScroll>
             <h2 className="font-heading text-3xl md:text-4xl font-bold uppercase text-primary-foreground">

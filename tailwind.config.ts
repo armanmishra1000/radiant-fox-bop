@@ -68,6 +68,9 @@ export default {
           dark: '#0A0A0A',
         }
   		},
+		backgroundImage: {
+     'primary-gradient': 'var(--primary-gradient)',
+   },
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
